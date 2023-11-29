@@ -1,5 +1,5 @@
 --- 
-title: "Ekonometrika"
+title: "Econometrics"
 author: "Bakti Siregar, M.Sc"
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
@@ -37,13 +37,14 @@ lapply(c("rmarkdown","bookdown",
 
 ```
 
-# Kata Pengantar{-}
+# Foreword{-}
 
-Selamat datang dalam dunia yang menarik dan kompleks dari ekonometrika! Buku ini dirancang untuk memberikan pemahaman mendalam tentang konsep-konsep dasar dan aplikasi praktis dalam analisis ekonometrik. Ekonometrika adalah cabang ilmu ekonomi yang menggabungkan teori ekonomi dengan metode matematika dan statistika untuk menguji hipotesis ekonomi dan membuat prediksi tentang fenomena ekonomi di dunia nyata.
+Welcome to the exciting and complex world of econometrics! This book is designed to provide an in-depth understanding of the basic concepts and practical applications in econometric analysis. Econometrics is a branch of economics that combines economic theory with mathematical and statistical methods to test economic hypotheses and make predictions about economic phenomena in the real world.
 
-Buku ini disusun dengan tujuan memberikan panduan yang komprehensif, mulai dari dasar-dasar ekonometrika hingga aplikasi canggih yang relevan dengan dunia ekonomi kontemporer. Pembaca akan dibimbing melalui konsep dasar seperti regresi linear, asumsi-asumsi yang mendasari model ekonometrik, hingga teknik-teknik analisis data yang canggih.
+This book was prepared with the aim of providing a comprehensive guide, starting from the basics of econometrics to advanced applications relevant to the contemporary world of economics. Readers will be guided through basic concepts such as linear regression, the assumptions underlying econometric models, to sophisticated data analysis techniques.
 
-Penekanan diberikan pada penerapan ekonometrika dalam konteks ekonomi modern, dengan studi kasus yang relevan dan contoh-contoh aplikatif. Buku ini juga mengintegrasikan perkembangan terkini dalam bidang ekonometrika, memastikan bahwa pembaca mendapatkan wawasan tentang pendekatan-pendekatan terbaru dan perkembangan metodologi.
+Emphasis is placed on the application of econometrics in the context of modern economics, with relevant case studies and applicable examples. The book also integrates the latest developments in the field of econometrics, ensuring that readers gain insight into the latest approaches and methodological developments.
+
 
 ```{r fig.align='center', echo=FALSE, include=identical(knitr:::pandoc_to(), 'html'), out.width='50%'}
 
@@ -51,45 +52,45 @@ knitr::include_graphics('images/EBook_Cover.png', dpi = NA)
 
 ```
 
-Sebagai penulis, saya berharap bahwa buku ini tidak hanya akan menjadi sumber referensi yang berharga bagi mahasiswa, akademisi, dan praktisi ekonomi, tetapi juga akan menginspirasi minat dan pemahaman lebih lanjut tentang kompleksitas fenomena ekonomi. Saya ingin mengucapkan terima kasih kepada semua yang telah memberikan kontribusi dan dukungan dalam proses penulisan buku ini.
+As the author, I hope that this book will not only be a valuable reference source for students, academics, and economic practitioners, but will also inspire further interest and understanding of the complexity of economic phenomena. I would like to thank everyone who has contributed and supported me in the process of writing this book.
 
-## Ringkasan Materi {-}
+## Summary {-}
 
-Ekonometrika adalah cabang ilmu ekonomi yang menggunakan metode matematika dan statistik untuk menganalisis dan menguji hipotesis dalam konteks ekonomi. Ini menggabungkan konsep ekonomi dengan alat statistik untuk memahami dan memodelkan hubungan ekonomi.
+Econometrics is a branch of economics that uses mathematical and statistical methods to analyze and test hypotheses in an economic context. It combines economic concepts with statistical tools to understand and model economic relationships.
 
-Berikut adalah beberapa topik umum dalam ekonometrika:
+Here are some common topics in econometrics:
 
-* **Model Regresi:** Ekonometrika seringkali dimulai dengan pembelajaran model regresi, di mana hubungan antara satu atau lebih variabel dependen dan independen dijelaskan. Model regresi dapat sederhana atau kompleks tergantung pada data dan masalah yang dihadapi.
+* **Regression Models:** Econometrics often begins with the study of regression models, in which the relationship between one or more dependent and independent variables is explained. Regression models can be simple or complex depending on the data and problem at hand.
 
-* **Asumsi Regresi:** Analisis regresi memerlukan adanya beberapa asumsi, seperti asumsi homoskedastisitas (varians residual konstan), asumsi independensi residual, dan asumsi normalitas residual.
+* **Regression Assumptions:** Regression analysis requires several assumptions, such as the homoscedasticity assumption (constant residual variance), the residual independence assumption, and the residual normality assumption.
 
-* **Estimasi Parameter:** Menggunakan data empiris, kita dapat mengestimasi parameter dalam model regresi untuk mengetahui seberapa baik model tersebut cocok dengan data.
+* **Parameter Estimation:** Using empirical data, we can estimate parameters in a regression model to find out how well the model fits the data.
 
-* **Uji Hipotesis:** Ekonometrika digunakan untuk menguji hipotesis statistik tentang parameter model. Ini membantu menentukan apakah hubungan yang diamati secara signifikan berbeda dari nol.
+* **Hypothesis Testing:** Econometrics is used to test statistical hypotheses about model parameters. This helps determine whether the observed relationship is significantly different from zero.
 
-* **Multikolinieritas dan Heteroskedastisitas:** Beberapa masalah umum dalam analisis regresi melibatkan multikolinieritas (korelasi tinggi antar variabel independen) dan heteroskedastisitas (varians residual tidak konstan). Ekonometrikian mengembangkan metode untuk menangani masalah-masalah ini.
+* **Multicollinearity and Heteroscedasticity:** Some common problems in regression analysis involve multicollinearity (high correlation between independent variables) and heteroscedasticity (non-constant residual variance). Econometricians develop methods to deal with these problems.
 
-* **Model Time Series:** Ekonometrika juga sering digunakan untuk menganalisis data deret waktu, yang mencakup observasi yang diambil secara berurutan selama waktu tertentu.
+* **Time Series Model:** Econometrics is also often used to analyze time series data, which includes observations taken sequentially over a certain time.
 
-* **Ekonometrika Terapan:** Selain model dasar, ekonometrika juga diterapkan dalam berbagai bidang ekonomi, termasuk keuangan, sumber daya manusia, pemasaran, dan lainnya.
+* **Applied Econometrics:** In addition to basic models, econometrics is also applied in various fields of economics, including finance, human resources, marketing, and others.
 
 
-## Penulis {-}
+## Writer {-}
 
 <img src = "https://github.com/dsciencelabs/images/blob/master/Penulis/Bakti.jpg?raw=true" width = "150" height = "150" style = "float:right; margin-left: 10px; margin-top: 7px" />
 
-- **[Bakti Siregar, M.Sc](https://www.linkedin.com/in/dsciencelabs/)** adalah Ketua Program Studi di Jurusan Statistika Universitas Matana. Lulusan Magister Matematika Terapan dari National Sun Yat Sen University, Taiwan. Beliau juga merupakan dosen dan konsultan Data Scientist di perusahaan-perusahaan ternama seperti [JNE](https://www.jne.co.id/id/beranda), [Samora Group](https://www.samoragroup.co.id/home/en), [Pertamina](https://www.pertamina.com/), dan lainnya. Beliau memiliki antusiasme khusus dalam mengajar Big Data Analytics, Machine Learning, Optimisasi, dan Analisis Time Series di bidang keuangan dan investasi. Keahliannya juga terlihat dalam penggunaan bahasa pemrograman Statistik seperti R Studio dan Python. Beliau mengaplikasikan sistem basis data MySQL/NoSQL dalam pembelajaran manajemen data, serta mahir dalam menggunakan tools Big Data seperti Spark dan Hadoop. Beberapa project beliau dapat dilihat di link berikut: [Rpubs](https://rpubs.com/dsciencelabs), [Github](https://github.com/dsciencelabs), [Website](https://dsciencelabs.github.io/web/index.html), dan [Kaggle](https://www.kaggle.com/baktisiregar/code). 
+- **[Bakti Siregar, M.Sc](https://www.linkedin.com/in/dsciencelabs/)** is Head of the Study Program at the Department of Statistics, Matana University. Graduate of Masters in Applied Mathematics from National Sun Yat Sen University, Taiwan. He is also a lecturer and Data Scientist consultant at well-known companies such as [JNE](https://www.jne.co.id/id/beranda), [Samora Group](https://www.samoragroup.co. id/home/en), [Pertamina](https://www.pertamina.com/), and others. He has special enthusiasm in teaching Big Data Analytics, Machine Learning, Optimization, and Time Series Analysis in the fields of finance and investment. His expertise is also evident in the use of Statistical programming languages such as R Studio and Python. He applies the MySQL/NoSQL database system in learning data management, and is proficient in using Big Data tools such as Spark and Hadoop. Some of his projects can be seen at the following links: [Rpubs](https://rpubs.com/dsciencelabs), [Github](https://github.com/dsciencelabs), [Website](https://dsciencelabs.github .io/web/index.html), and [Kaggle](https://www.kaggle.com/baktisiregar/code). 
 
 
-## Ucapan Terima Kasih{-}
+## My Gratitude {-}
 
-Terima kasih kepada rekan-rekan akademisi dan praktisi ekonometrika yang telah berbagi pengetahuan dan wawasan, memberikan masukan yang berharga, serta memberikan inspirasi dalam penyusunan materi ini. Saya juga mengucapkan terima kasih kepada keluarga dan teman-teman yang memberikan dukungan moril dan semangat selama proses penulisan. Kalian adalah sumber kekuatan dan inspirasi bagi saya. Seluruh proses penulisan ini adalah perjalanan yang luar biasa, dan saya berharap ebook ini dapat memberikan manfaat bagi pembaca, baik mereka yang sedang mempelajari ekonometrika untuk pertama kalinya maupun mereka yang ingin meningkatkan pemahaman mereka.
+Thank you to fellow academics and econometric practitioners who have shared their knowledge and insights, provided valuable input, and provided inspiration in preparing this material. I would also like to thank my family and friends who provided moral support and encouragement during the writing process. You are a source of strength and inspiration for me. The entire process of writing this was an incredible journey, and I hope this ebook will be of benefit to readers, both those who are studying econometrics for the first time and those who want to improve their understanding.
 
-Akhir kata, terima kasih kepada tim penerbit yang telah bekerja keras dalam proses produksi ebook ini. Semoga ebook ini menjadi sumber referensi yang bermanfaat dan dapat turut berkontribusi dalam perkembangan studi ekonometrika.
+Finally, thank you to the publishing team who has worked hard in the production process of this ebook. Hopefully this ebook will be a useful reference source and can contribute to the development of econometric studies.
 
-## Masukan & Saran {-}
+## Feedback & Suggestions {-}
 
-Semua masukan dan tanggapan Anda sangat berarti bagi kami untuk memperbaiki template ini kedepannya. Bagi para pembaca/pengguna yang ingin menyampaikan masukan dan tanggapan, dipersilahkan melalui kontak dibawak ini!
+All your input and feedback means a lot to us to improve this template in the future. For readers/users who wish to submit input and responses, please use the contact below!
 
 **Email:** dsciencelabs@outlook.com
 
