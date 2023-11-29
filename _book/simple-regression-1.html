@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 2 Simple Regression | Econometrics</title>
+  <meta name="description" content="Deskripsi Singkat Tentang Buku" />
+  <meta name="generator" content="bookdown 0.35 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 2 Simple Regression | Econometrics" />
+  <meta property="og:type" content="book" />
+  <meta property="og:image" content="/images/EBook_Cover.png" />
+  <meta property="og:description" content="Deskripsi Singkat Tentang Buku" />
+  <meta name="github-repo" content="dsciencelabs/Econometrics" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 2 Simple Regression | Econometrics" />
+  
+  <meta name="twitter:description" content="Deskripsi Singkat Tentang Buku" />
+  <meta name="twitter:image" content="/images/EBook_Cover.png" />
+
+<meta name="author" content="Bakti Siregar, M.Sc" />
+
+
+<meta name="date" content="2023-11-29" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="introduction-to-econometrics.html"/>
+<link rel="next" href="referensi.html"/>
+<script src="libs/jquery/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections/anchor-sections.js"></script>
+<script src="libs/htmlwidgets/htmlwidgets.js"></script>
+<link href="libs/datatables-css/datatables-crosstalk.css" rel="stylesheet" />
+<script src="libs/datatables-binding/datatables.js"></script>
+<link href="libs/dt-core/css/jquery.dataTables.min.css" rel="stylesheet" />
+<link href="libs/dt-core/css/jquery.dataTables.extra.css" rel="stylesheet" />
+<script src="libs/dt-core/js/jquery.dataTables.min.js"></script>
+<link href="libs/crosstalk/css/crosstalk.min.css" rel="stylesheet" />
+<script src="libs/crosstalk/js/crosstalk.min.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><center><img src="images/logo.png" alt="logo" width="50%" height="50%"style="margin: 15px 0 0 0"></center></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Foreword</a>
+<ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#summary"><i class="fa fa-check"></i>Summary</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#writer"><i class="fa fa-check"></i>Writer</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#my-gratitude"><i class="fa fa-check"></i>My Gratitude</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#feedback-suggestions"><i class="fa fa-check"></i>Feedback &amp; Suggestions</a></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="introduction-to-econometrics.html"><a href="introduction-to-econometrics.html"><i class="fa fa-check"></i><b>1</b> Introduction to Econometrics</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="introduction-to-econometrics.html"><a href="introduction-to-econometrics.html#what-is-econometrics"><i class="fa fa-check"></i><b>1.1</b> What is Econometrics?</a></li>
+<li class="chapter" data-level="1.2" data-path="introduction-to-econometrics.html"><a href="introduction-to-econometrics.html#goals-of-econometrics"><i class="fa fa-check"></i><b>1.2</b> Goals of Econometrics</a></li>
+<li class="chapter" data-level="1.3" data-path="introduction-to-econometrics.html"><a href="introduction-to-econometrics.html#econometric-relations-and-regression"><i class="fa fa-check"></i><b>1.3</b> Econometric Relations and Regression</a></li>
+<li class="chapter" data-level="1.4" data-path="introduction-to-econometrics.html"><a href="introduction-to-econometrics.html#lab-practicum"><i class="fa fa-check"></i><b>1.4</b> Lab Practicum</a>
+<ul>
+<li class="chapter" data-level="1.4.1" data-path="introduction-to-econometrics.html"><a href="introduction-to-econometrics.html#simple-regression"><i class="fa fa-check"></i><b>1.4.1</b> Simple Regression</a></li>
+<li class="chapter" data-level="1.4.2" data-path="introduction-to-econometrics.html"><a href="introduction-to-econometrics.html#multiple-regression"><i class="fa fa-check"></i><b>1.4.2</b> Multiple Regression</a></li>
+<li class="chapter" data-level="" data-path="introduction-to-econometrics.html"><a href="introduction-to-econometrics.html#catatan"><i class="fa fa-check"></i>Catatan</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="simple-regression-1.html"><a href="simple-regression-1.html"><i class="fa fa-check"></i><b>2</b> Simple Regression</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="simple-regression-1.html"><a href="simple-regression-1.html#what-is-regression"><i class="fa fa-check"></i><b>2.1</b> What is Regression?</a></li>
+<li class="chapter" data-level="2.2" data-path="simple-regression-1.html"><a href="simple-regression-1.html#measures-of-the-relationship"><i class="fa fa-check"></i><b>2.2</b> Measures Of The Relationship</a>
+<ul>
+<li class="chapter" data-level="2.2.1" data-path="simple-regression-1.html"><a href="simple-regression-1.html#covariance"><i class="fa fa-check"></i><b>2.2.1</b> Covariance</a></li>
+<li class="chapter" data-level="2.2.2" data-path="simple-regression-1.html"><a href="simple-regression-1.html#correlation"><i class="fa fa-check"></i><b>2.2.2</b> Correlation</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="simple-regression-1.html"><a href="simple-regression-1.html#the-general-model"><i class="fa fa-check"></i><b>2.3</b> The General Model</a>
+<ul>
+<li class="chapter" data-level="2.3.1" data-path="simple-regression-1.html"><a href="simple-regression-1.html#slr-the-mathematical-model"><i class="fa fa-check"></i><b>2.3.1</b> SLR: The Mathematical Model</a></li>
+<li class="chapter" data-level="2.3.2" data-path="simple-regression-1.html"><a href="simple-regression-1.html#slr-the-statistical-model"><i class="fa fa-check"></i><b>2.3.2</b> SLR: The Statistical Model</a></li>
+<li class="chapter" data-level="2.3.3" data-path="simple-regression-1.html"><a href="simple-regression-1.html#the-least-squares-principle"><i class="fa fa-check"></i><b>2.3.3</b> The Least Squares Principle</a></li>
+<li class="chapter" data-level="2.3.4" data-path="simple-regression-1.html"><a href="simple-regression-1.html#least-squares-estimators"><i class="fa fa-check"></i><b>2.3.4</b> Least Squares Estimators</a></li>
+<li class="chapter" data-level="2.3.5" data-path="simple-regression-1.html"><a href="simple-regression-1.html#estimate-the-var-and-cov"><i class="fa fa-check"></i><b>2.3.5</b> Estimate the Var and Cov</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="simple-regression-1.html"><a href="simple-regression-1.html#lab-practicum-1"><i class="fa fa-check"></i><b>2.4</b> Lab Practicum</a>
+<ul>
+<li class="chapter" data-level="2.4.1" data-path="simple-regression-1.html"><a href="simple-regression-1.html#estimating-a-linear-regression"><i class="fa fa-check"></i><b>2.4.1</b> Estimating a Linear Regression</a></li>
+<li class="chapter" data-level="2.4.2" data-path="simple-regression-1.html"><a href="simple-regression-1.html#prediction-with-slr-model"><i class="fa fa-check"></i><b>2.4.2</b> Prediction with SLR Model</a></li>
+<li class="chapter" data-level="2.4.3" data-path="simple-regression-1.html"><a href="simple-regression-1.html#assess-regression-coefficients"><i class="fa fa-check"></i><b>2.4.3</b> Assess Regression Coefficients</a></li>
+<li class="chapter" data-level="2.4.4" data-path="simple-regression-1.html"><a href="simple-regression-1.html#estimated-var-and-cov"><i class="fa fa-check"></i><b>2.4.4</b> Estimated Var and Cov</a></li>
+<li class="chapter" data-level="2.4.5" data-path="simple-regression-1.html"><a href="simple-regression-1.html#non-linear-relationships"><i class="fa fa-check"></i><b>2.4.5</b> Non-Linear Relationships</a></li>
+<li class="chapter" data-level="2.4.6" data-path="simple-regression-1.html"><a href="simple-regression-1.html#indicator-variables"><i class="fa fa-check"></i><b>2.4.6</b> Indicator Variables</a></li>
+<li class="chapter" data-level="2.4.7" data-path="simple-regression-1.html"><a href="simple-regression-1.html#monte-carlo-simulation"><i class="fa fa-check"></i><b>2.4.7</b> Monte Carlo Simulation</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="referensi.html"><a href="referensi.html"><i class="fa fa-check"></i><b>3</b> Referensi</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Econometrics</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="simple-regression-1" class="section level1 hasAnchor" number="2">
+<h1><span class="header-section-number">Chapter 2</span> Simple Regression<a href="simple-regression-1.html#simple-regression-1" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="what-is-regression" class="section level2 hasAnchor" number="2.1">
+<h2><span class="header-section-number">2.1</span> What is Regression?<a href="simple-regression-1.html#what-is-regression" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Regression is a set of statistical methods used for the estimation of relationships between a dependent variable and one or more independent variables. It can be utilized to assess the strength of the relationship between variables by fitting a line to the observed data. Regression allows you to estimate how the dependent variable changes as the independent variable(s) change. There are several variations of Regression, such as linear, multiple linear, and nonlinear.</p>
+<p>The most common models are simple linear and multiple linear. Nonlinear regression analysis is commonly used for more complicated data sets in which the dependent and independent variables show a nonlinear relationship.</p>
+</div>
+<div id="measures-of-the-relationship" class="section level2 hasAnchor" number="2.2">
+<h2><span class="header-section-number">2.2</span> Measures Of The Relationship<a href="simple-regression-1.html#measures-of-the-relationship" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>There are two quantitative measures of such relationships:</p>
+<div id="covariance" class="section level3 hasAnchor" number="2.2.1">
+<h3><span class="header-section-number">2.2.1</span> Covariance<a href="simple-regression-1.html#covariance" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>In probability theory and statistics, covariance is a measure of the joint variability of two random variables.</p>
+<p><span class="math display">\[
+\begin{aligned}
+cov(x,y)={\sum^n_{i=1} (x_i-\bar{x})(y_i-\bar{y}) \over n-1} \\
+\end{aligned}
+\]</span></p>
+<p>Covariance between two variables:</p>
+<ul>
+<li><span class="math inline">\(cov(x,y) &gt; 0\)</span>, <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span> tend to move in the same direction</li>
+<li><span class="math inline">\(cov(x,y) &lt; 0\)</span>, <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span> tend to move in opposite directions</li>
+<li><span class="math inline">\(cov(x,y) = 0\)</span>, <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span> are independent</li>
+</ul>
+</div>
+<div id="correlation" class="section level3 hasAnchor" number="2.2.2">
+<h3><span class="header-section-number">2.2.2</span> Correlation<a href="simple-regression-1.html#correlation" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The linear correlation coefficient is also referred to as Pearson’s product moment correlation coefficient in honor of Karl Pearson, who originally developed it. This statistic numerically describes how strong the straight-line or linear relationship is between the two variables and the direction, positive or negative.</p>
+<p>We can describe the relationship between these two variables graphically and numerically. In order to measure the strength of a linear relationship between two quantitative variables graphically, we use scatter plots:</p>
+<p><br></p>
+<p><img src="images/Bab2/correlation.webp" width="100%" style="display: block; margin: auto;" /></p>
+<p><br></p>
+<p>If you want to measure the strength of a linear relationship between two quantitative variables numerically, use the following form:</p>
+<p><span class="math display">\[
+\begin{aligned}
+r={cov(x,y)\over s_x s_y}
+\end{aligned}
+\]</span></p>
+<p>where <span class="math inline">\(s_x\)</span> are the sample mean and sample standard deviation of the <span class="math inline">\(x’s\)</span>, and <span class="math inline">\(s_y\)</span> are the mean and standard deviation of the <span class="math inline">\(y’s.\)</span></p>
+<p>The properties of “r”:</p>
+<ul>
+<li>It is always between -1 and +1.</li>
+<li>It is a unitless measure so “r” would be the same value whether you measured the two variables in pounds and inches or in grams and centimeters.</li>
+<li>Positive values of “r” are associated with positive relationships.</li>
+<li>Negative values of “r” are associated with negative relationships.</li>
+</ul>
+</div>
+</div>
+<div id="the-general-model" class="section level2 hasAnchor" number="2.3">
+<h2><span class="header-section-number">2.3</span> The General Model<a href="simple-regression-1.html#the-general-model" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>A simple linear regression model assumes that a linear relationship exists between the conditional expectation of two quantitative variables:</p>
+<p><img src="images/Bab2/linear.webp" width="80%" style="display: block; margin: auto;" /></p>
+<p>where,</p>
+<ul>
+<li><span class="math inline">\(Y\)</span> is regarded as the predictor, explanatory, or dependent variable.</li>
+<li><span class="math inline">\(X\)</span> is regarded as the response, outcome, or independent variable.</li>
+<li><span class="math inline">\(\beta_1\)</span> is the intercept parameter or coefficient</li>
+<li><span class="math inline">\(\beta_2\)</span> is the slope parameter or coefficient</li>
+<li><span class="math inline">\(\hat{Y}\)</span> is the estimated value of <span class="math inline">\(Y\)</span> given <span class="math inline">\(X\)</span></li>
+<li><span class="math inline">\(b_1\)</span> and <span class="math inline">\(b_2\)</span> is the coefficient estimated value</li>
+</ul>
+<div id="slr-the-mathematical-model" class="section level3 hasAnchor" number="2.3.1">
+<h3><span class="header-section-number">2.3.1</span> SLR: The Mathematical Model<a href="simple-regression-1.html#slr-the-mathematical-model" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The mathematical representation of a simple linear regression model a model with one dependent variable and only one independent variable can be expressed as:</p>
+<p><span class="math display">\[
+\begin{aligned}
+E(y|x)=\mu_y|x=\beta_1+β_2x
+\end{aligned}
+\]</span></p>
+<p>where <span class="math inline">\(\beta_1\)</span> and <span class="math inline">\(\beta_2\)</span> are the regression parameters that represent the intercept and slope, respectively. We can interpret the above equation as, “The expected value of the depepndent variable <span class="math inline">\(y\)</span> given <span class="math inline">\(x\)</span> is equal to the mean of <span class="math inline">\(y\)</span> given <span class="math inline">\(x.\)</span>” The expected value of <span class="math inline">\(y\)</span> given <span class="math inline">\(x,\)</span> according to the equation 3, can be mathematically represented with an intercept <span class="math inline">\(\beta_1\)</span> and a coefficient of <span class="math inline">\(x, \beta_2.\)</span> The conditional mean <span class="math inline">\(E(y|x)\)</span> is called a simple linear regression model because it contains only one non-random independent variable <span class="math inline">\(x.\)</span></p>
+</div>
+<div id="slr-the-statistical-model" class="section level3 hasAnchor" number="2.3.2">
+<h3><span class="header-section-number">2.3.2</span> SLR: The Statistical Model<a href="simple-regression-1.html#slr-the-statistical-model" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The simple linear regression model relies on a few assumptions. First, if <span class="math inline">\(var(y|x)=\sigma^2,\)</span> then the data is said to be homoscedastic. This means that for any value of <span class="math inline">\(x,\)</span> the variance of <span class="math inline">\(y\)</span> remains the same. However, this is an unrealistic assumption in real life. Most “real world data” that you would be working with will be heteroscedastic, which means that the variance does not remain the same for a given value of <span class="math inline">\(x.\)</span> The issue of heteroscedasticity is not such a grave sin, depending on the objective and if you have a large enough sample size. However, overcoming this issue is not within the scope of this tutorial. It is just one of the assumptions of the simple linear regression model.</p>
+<p>The five assumptions of the simple linear regression model are:</p>
+<ul>
+<li>The mean value of <span class="math inline">\(y\)</span> for each value of <span class="math inline">\(x\)</span> is given by the regression function <span class="math inline">\(E(y|x)=\mu y|x=\beta_1+\beta_2x.\)</span></li>
+<li>For each value of <span class="math inline">\(x,\)</span> the values of <span class="math inline">\(y\)</span> are distributed about their mean value, following the probability distribution that all have the same variance (i.e. homoscedasticity). That is, <span class="math inline">\(var(y|x)=\sigma^2.\)</span></li>
+<li>The sample values of <span class="math inline">\(y\)</span> are all uncorrelated and have zero covariance, which implies that no linear association exists between them. That is, <span class="math inline">\(cov(y_i,y_j)=0.\)</span></li>
+<li>The value <span class="math inline">\(x\)</span> is not random and must take at least two values.</li>
+<li>(Optional) The values of <span class="math inline">\(y\)</span> follow a Gaussian Distribution (i.e. normally distributed about their mean for each value of <span class="math inline">\(x\)</span>). This means that <span class="math inline">\(y∼N[\beta_1+\beta_2x,\sigma^2]\)</span></li>
+</ul>
+</div>
+<div id="the-least-squares-principle" class="section level3 hasAnchor" number="2.3.3">
+<h3><span class="header-section-number">2.3.3</span> The Least Squares Principle<a href="simple-regression-1.html#the-least-squares-principle" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The goal in simple linear regression is to estimate the parameters (the <span class="math inline">\(\beta’s\)</span>). To do so, we must first introduce the least squares principle, the method we will use to estimate these parameters. The <strong>least squares principle</strong> states that the “line of best fit” is the one that minimizes the distance between each point <span class="math inline">\((x,y)\)</span> to the regression line. In terms of notation, the parameter estimates of <span class="math inline">\(\beta_1\)</span> and <span class="math inline">\(\beta_2\)</span> are generally denoted as <span class="math inline">\(_1\)</span> and <span class="math inline">\(b_2\)</span>, respectively.</p>
+<p>The equation for the line of best fit is given by</p>
+<p><span class="math display">\[
+\begin{aligned}
+\hat{y}_i=b_1+b_2x_i
+\end{aligned}
+\]</span></p>
+<p>The vertical distances between the line of best fit and each point <span class="math inline">\((x,y)\)</span> are referred to as the <strong>least squares residuals</strong>, which is given by</p>
+<p><span class="math display">\[
+\begin{aligned}
+\hat{e}_i=y_i−\hat{y}_i=y_i−b_1+b_2x_i
+\end{aligned}
+\]</span></p>
+<p>In order to find the values for <span class="math inline">\(b_1\)</span> and <span class="math inline">\(b_2,\)</span> we want to find the values for the unknown parameters <span class="math inline">\(\beta_1\)</span> and <span class="math inline">\(\beta_2\)</span> that minimizes the sum of squares function</p>
+<p><span class="math display">\[
+\begin{aligned}
+S(\beta_1,\beta_2)=\sum_{i=1}^N e^2_i= \biggl(y_i−\beta_1+\beta_2x_i \biggr) ^2
+\end{aligned}
+\]</span></p>
+<p>The <strong>least squares estimator</strong> <span class="math inline">\(b_1\)</span> and <span class="math inline">\(b_2\)</span> can be solved using the following equations</p>
+<p><span class="math display">\[
+\begin{aligned}
+b_2 &amp; = {\sum^N_{i=1}(x_i−\bar{x})(y_i−\bar{y}) \over \sum^N_{i=1}(x_i−\bar{x})^2 }\\
+b_1&amp; = \bar{y}−b_2\bar{x}
+\end{aligned}
+\]</span></p>
+</div>
+<div id="least-squares-estimators" class="section level3 hasAnchor" number="2.3.4">
+<h3><span class="header-section-number">2.3.4</span> Least Squares Estimators<a href="simple-regression-1.html#least-squares-estimators" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>It is important to note that we may never know the true value of <span class="math inline">\(\beta_1\)</span> and <span class="math inline">\(\beta_2,\)</span> and consequently may never know whether our estimates <span class="math inline">\(b_1\)</span> and <span class="math inline">\(b_2\)</span> are close to the actual values. The least squares estimates <span class="math inline">\(\hat{y_i}\)</span> are random variables because they depend on the random variable <span class="math inline">\(y.\)</span> However, if all of our assumptions hold, then <span class="math inline">\(E(b_2)=\beta_2\)</span>. In a situation where the estimators are equal to their true parameter values, then they are said to be unbiased estimators. If we have a large sample size <span class="math inline">\(N\)</span> and all of the assumptions for the simple linear regression model hold, then the value of the estimators <span class="math inline">\(b_1\)</span> and <span class="math inline">\(b_2\)</span> obtained from all the samples will be <span class="math inline">\(\beta_1\)</span> and <span class="math inline">\(\beta_2,\)</span> respectively. The unbiasedness property depends on having many samples of data from the same population.</p>
+<p>If all of the assuptions of the linear regression model hold, then the variances and covariances of the estimators are</p>
+<p><span class="math display">\[
+\begin{aligned}
+var(b_1) &amp; =\sigma^2 \biggl[{\sum^n_{i=1}x^2_i \over N(x_i−\bar{x})^2}\biggl] \\
+var(b_2) &amp; ={\sigma^2 \over \sum(x_i−\bar{x})^2}  \\
+cov(b_1,b_2) &amp; =\sigma^2 \biggl[{−\bar{x} \over ∑^n_{i=1}(x_i−\bar{x})^2}\biggr] \\
+\end{aligned}
+\]</span></p>
+<p>The variance of an estimator measures the precision of the estimator in the sense that it tells us how much the estimates can vary from sample to sample. <strong><em>The smaller the variance, the greater the sampling precision</em></strong>. Then the Gauss-Markov Theorem states that the estimators <span class="math inline">\(b_1\)</span> and <span class="math inline">\(b_2\)</span> have the smallest variance of all linear and unbiased estimators of <span class="math inline">\(\beta_1\)</span> and <span class="math inline">\(\beta_2.\)</span> Such estimators are commonly referred to as the best linear unbiased estimator (BLUE).</p>
+</div>
+<div id="estimate-the-var-and-cov" class="section level3 hasAnchor" number="2.3.5">
+<h3><span class="header-section-number">2.3.5</span> Estimate the Var and Cov<a href="simple-regression-1.html#estimate-the-var-and-cov" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Recall that the variance of the random error term <span class="math inline">\(e\)</span> is</p>
+<p><span class="math display">\[
+\begin{aligned}
+var(e_i)=E\biggl[e_i−E(e_i)\biggr]^2
+\end{aligned}
+\]</span></p>
+<p>If the assumption <span class="math inline">\(E(e_i)=0.\)</span> If the assumption holds, we can then rewrite the variance of the random error term <span class="math inline">\(e\)</span> as</p>
+<p><span class="math display">\[
+\begin{aligned}
+var(e_i)=\sigma^2=E[e_i]^2={1\over N} \sum_{i=1}^N e^2_i
+\end{aligned}
+\]</span></p>
+<p>Unfortunately, the above formula is of little to no use since the random error term <span class="math inline">\(e_i\)</span> is unobservable. Fortunately, since <span class="math inline">\(e_i=y_i−E(y|x)=y_i−\beta1+\beta_2x_i,\)</span> we can replace the unknown parameters <span class="math inline">\(\beta_1\)</span> and <span class="math inline">\(\beta_2\)</span> with their least squares estimates <span class="math inline">\(b_1\)</span> and <span class="math inline">\(b_2\)</span> to obtain</p>
+<p><span class="math display">\[
+\begin{aligned}
+\hat{e}_i=y_i−\hat{y}_i=y_i−b_1+b_2x_i
+\end{aligned}
+\]</span></p>
+<p>The unbiased estimator of the variance of the random error term is</p>
+<p><span class="math display">\[
+\begin{aligned}
+\sigma^2={\sum \hat{e}_i \over N−2}
+\end{aligned}
+\]</span></p>
+<p>where 2 represents the number of parameters (in this case <span class="math inline">\(\beta_1\)</span> and <span class="math inline">\(\beta_2\)</span>). We refer to this as having <span class="math inline">\(N−2\)</span> degrees of freedom. Now that we have an unbiased estimator of the variance of our random error term <span class="math inline">\(e,\)</span> we can estimate the variances and covarianes of their least squares estimates.</p>
+<p><span class="math display">\[
+\begin{aligned}
+\widehat{var(b_1)} &amp; = \hat{\sigma^2} \biggl[{\sum^n_{i=1}x^2_i \over N(x_i−\bar{x})^2}\biggl] \\
+\widehat{var(b_2)} &amp; ={\hat{\sigma^2} \over \sum(x_i−\bar{x})^2}  \\
+\widehat{cov(b_1,b_2)} &amp; = \hat{\sigma^2} \biggl[{−\bar{x} \over ∑^n_{i=1}(x_i−\bar{x})^2}\biggr] \\
+\end{aligned}
+\]</span></p>
+</div>
+</div>
+<div id="lab-practicum-1" class="section level2 hasAnchor" number="2.4">
+<h2><span class="header-section-number">2.4</span> Lab Practicum<a href="simple-regression-1.html#lab-practicum-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>The data for this example is stored in the R package <code>PoEdata</code>. First, you have to install the “PoEdata” package, type the following script lines in the Console window of RStudio:</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="simple-regression-1.html#cb6-1" tabindex="-1"></a><span class="co"># install.packages(&quot;remotes&quot;)</span></span>
+<span id="cb6-2"><a href="simple-regression-1.html#cb6-2" tabindex="-1"></a><span class="co"># remotes::install_github(&quot;ccolonescu/PoEdata&quot;)</span></span></code></pre></div>
+<p>Then, consider the data set:</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="simple-regression-1.html#cb7-1" tabindex="-1"></a><span class="fu">library</span>(PoEdata)                                     <span class="co"># load the library PoEdata</span></span>
+<span id="cb7-2"><a href="simple-regression-1.html#cb7-2" tabindex="-1"></a><span class="fu">library</span>(DT)                                          <span class="co"># use for datatable fuction </span></span>
+<span id="cb7-3"><a href="simple-regression-1.html#cb7-3" tabindex="-1"></a><span class="fu">data</span>(<span class="st">&quot;food&quot;</span>, <span class="at">package=</span><span class="st">&quot;PoEdata&quot;</span>)</span>
+<span id="cb7-4"><a href="simple-regression-1.html#cb7-4" tabindex="-1"></a><span class="fu">datatable</span>(food)</span></code></pre></div>
+<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-89a555ff7b9c0dade5eb" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-89a555ff7b9c0dade5eb">{"x":{"filter":"none","vertical":false,"data":[["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25","26","27","28","29","30","31","32","33","34","35","36","37","38","39","40"],[115.22,135.98,119.34,114.96,187.05,243.92,267.43,238.71,295.94,317.78,216,240.35,386.57,261.53,249.34,309.87,345.89,165.54,196.98,395.26,406.34,171.92,303.23,377.04,194.35,213.48,293.87,259.61,323.71,275.02,109.71,359.19,201.51,460.36,447.76,482.55,438.29,587.66,257.95,375.73],[3.69,4.39,4.75,6.03,12.47,12.98,14.2,14.76,15.32,16.39,17.35,17.77,17.93,18.43,18.55,18.8,18.81,19.04,19.22,19.93,20.13,20.33,20.37,20.43,21.45,22.52,22.55,22.86,24.2,24.39,24.42,25.2,25.5,26.61,26.7,27.14,27.16,28.62,29.4,33.4]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>food_exp<\/th>\n      <th>income<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<p>It is always a good idea to visually inspect the data in a scatter diagram, which can be created using the function <code>plot()</code>. The figure bellow is a scatter diagram of food expenditure on income, suggesting that there is a positive relationship between income and food expenditure.</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="simple-regression-1.html#cb8-1" tabindex="-1"></a><span class="fu">plot</span>(food<span class="sc">$</span>income, food<span class="sc">$</span>food_exp, </span>
+<span id="cb8-2"><a href="simple-regression-1.html#cb8-2" tabindex="-1"></a>     <span class="at">ylim=</span><span class="fu">c</span>(<span class="dv">0</span>, <span class="fu">max</span>(food<span class="sc">$</span>food_exp)),</span>
+<span id="cb8-3"><a href="simple-regression-1.html#cb8-3" tabindex="-1"></a>     <span class="at">xlim=</span><span class="fu">c</span>(<span class="dv">0</span>, <span class="fu">max</span>(food<span class="sc">$</span>income)),</span>
+<span id="cb8-4"><a href="simple-regression-1.html#cb8-4" tabindex="-1"></a>     <span class="at">xlab=</span><span class="st">&quot;weekly income in $100&quot;</span>, </span>
+<span id="cb8-5"><a href="simple-regression-1.html#cb8-5" tabindex="-1"></a>     <span class="at">ylab=</span><span class="st">&quot;weekly food expenditure in $&quot;</span>, </span>
+<span id="cb8-6"><a href="simple-regression-1.html#cb8-6" tabindex="-1"></a>     <span class="at">type =</span> <span class="st">&quot;p&quot;</span>)</span></code></pre></div>
+<p><img src="Econometrics_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
+<p><a href="https://www.investopedia.com/terms/r/r-squared.asp">About <span class="math inline">\(R^2\)</span></a></p>
+<div id="estimating-a-linear-regression" class="section level3 hasAnchor" number="2.4.1">
+<h3><span class="header-section-number">2.4.1</span> Estimating a Linear Regression<a href="simple-regression-1.html#estimating-a-linear-regression" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>For the food expenditure data, the regression model will be</p>
+<p><span class="math display">\[
+\begin{aligned}
+Y&amp;=\beta_1+\beta_2 *X+e \\
+food_{exp}&amp;=\beta_1+\beta_2*income+e
+\end{aligned}
+\]</span></p>
+<p>The R function for estimating a linear regression model is <code>lm(y~x, data)</code> which, used just by itself does not show any output; It is useful to give the model a name, such as <code>mod1</code>, then show the results using <code>summary(mod1)</code>.</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="simple-regression-1.html#cb9-1" tabindex="-1"></a>mod1 <span class="ot">&lt;-</span> <span class="fu">lm</span>(food_exp <span class="sc">~</span> income, <span class="at">data =</span> food)           <span class="co"># linear model</span></span>
+<span id="cb9-2"><a href="simple-regression-1.html#cb9-2" tabindex="-1"></a>smod1<span class="ot">&lt;-</span> <span class="fu">summary</span>(mod1)                                <span class="co"># get summary </span></span>
+<span id="cb9-3"><a href="simple-regression-1.html#cb9-3" tabindex="-1"></a>smod1</span></code></pre></div>
+<pre><code>## 
+## Call:
+## lm(formula = food_exp ~ income, data = food)
+## 
+## Residuals:
+##     Min      1Q  Median      3Q     Max 
+## -223.03  -50.82   -6.32   67.88  212.04 
+## 
+## Coefficients:
+##             Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept)    83.42      43.41    1.92    0.062 .  
+## income         10.21       2.09    4.88  1.9e-05 ***
+## ---
+## Signif. codes:  
+## 0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 89.5 on 38 degrees of freedom
+## Multiple R-squared:  0.385,  Adjusted R-squared:  0.369 
+## F-statistic: 23.8 on 1 and 38 DF,  p-value: 1.95e-05</code></pre>
+<p>If you are interested in only some of the results of the regression, such as the estimated coefficients, you can retrieve them using specific functions, such as the function <code>coef()</code>.</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="simple-regression-1.html#cb11-1" tabindex="-1"></a>b1 <span class="ot">&lt;-</span> <span class="fu">coef</span>(mod1)[[<span class="dv">1</span>]]                                <span class="co"># the estimated value of  β1</span></span>
+<span id="cb11-2"><a href="simple-regression-1.html#cb11-2" tabindex="-1"></a>b2 <span class="ot">&lt;-</span> <span class="fu">coef</span>(mod1)[[<span class="dv">2</span>]]                                <span class="co"># the estimated value of  β2</span></span>
+<span id="cb11-3"><a href="simple-regression-1.html#cb11-3" tabindex="-1"></a>b1</span></code></pre></div>
+<pre><code>## [1] 83.42</code></pre>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="simple-regression-1.html#cb13-1" tabindex="-1"></a>b2</span></code></pre></div>
+<pre><code>## [1] 10.21</code></pre>
+<p>From the result, we can write our estimating linear regression as:</p>
+<p><span class="math display">\[
+\begin{aligned}
+\hat{Y}&amp;=b_1+b_2*X \\
+\hat{food_{exp}}&amp;=83.416+10.20964*income
+\end{aligned}
+\]</span></p>
+<p>The intercept parameter, <span class="math inline">\(\beta_1\)</span> , is usually of little importance in econometric models; we are mostly interested in the slope parameter, <span class="math inline">\(\beta_2\)</span>. The estimated value of <span class="math inline">\(\beta_2\)</span> suggests that the food expenditure for an average family increases by 10.209643 when the family income increases by 1 unit, which in this case is $100. The R function <code>abline()</code> adds the <code>regfression</code> line to the previously plotted scatter diagram bellow:</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="simple-regression-1.html#cb15-1" tabindex="-1"></a><span class="fu">plot</span>(food<span class="sc">$</span>income, food<span class="sc">$</span>food_exp, </span>
+<span id="cb15-2"><a href="simple-regression-1.html#cb15-2" tabindex="-1"></a>     <span class="at">xlab=</span><span class="st">&quot;weekly income in $100&quot;</span>, </span>
+<span id="cb15-3"><a href="simple-regression-1.html#cb15-3" tabindex="-1"></a>     <span class="at">ylab=</span><span class="st">&quot;weekly food expenditure in $&quot;</span>, </span>
+<span id="cb15-4"><a href="simple-regression-1.html#cb15-4" tabindex="-1"></a>     <span class="at">type =</span> <span class="st">&quot;p&quot;</span>)</span>
+<span id="cb15-5"><a href="simple-regression-1.html#cb15-5" tabindex="-1"></a><span class="fu">abline</span>(b1,b2)</span></code></pre></div>
+<p><img src="Econometrics_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
+<p>How can one retrieve various regression results? To retrieve a particular result you just refer to it with the name of the object, followed by the $ sign and the name of the result you wish to retrieve. For instance, if we want the vector of coefficients from <code>mod1</code>, we refer to it as <code>mod1\$coefficients</code> and <code>smod1\$coefficients</code>:</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="simple-regression-1.html#cb16-1" tabindex="-1"></a>mod1<span class="sc">$</span>coefficients</span></code></pre></div>
+<pre><code>## (Intercept)      income 
+##       83.42       10.21</code></pre>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="simple-regression-1.html#cb18-1" tabindex="-1"></a>smod1<span class="sc">$</span>coefficients</span></code></pre></div>
+<pre><code>##             Estimate Std. Error t value  Pr(&gt;|t|)
+## (Intercept)    83.42     43.410   1.922 6.218e-02
+## income         10.21      2.093   4.877 1.946e-05</code></pre>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="simple-regression-1.html#cb20-1" tabindex="-1"></a><span class="fu">names</span>(mod1)                                          <span class="co"># for more</span></span>
+<span id="cb20-2"><a href="simple-regression-1.html#cb20-2" tabindex="-1"></a><span class="fu">names</span>(smod1)                                         <span class="co"># for more</span></span></code></pre></div>
+<p>As we have seen before, however, some of these results can be retrieved using specific functions, such as <code>coef(mod1), resid(mod1), fitted(mod1), and vcov(mod1)</code>.</p>
+<hr />
+</div>
+<div id="prediction-with-slr-model" class="section level3 hasAnchor" number="2.4.2">
+<h3><span class="header-section-number">2.4.2</span> Prediction with SLR Model<a href="simple-regression-1.html#prediction-with-slr-model" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The estimated regression parameters, <span class="math inline">\(b_1\)</span> and <span class="math inline">\(b_2\)</span> allow us to predict the expected food expenditure for any given income. All we need to do is to plug the estimated parameter values and the given income into an equation like Equation 15 . For example, the expected value of <code>food_exp</code> for an income of $2000 is calculated in Equation 16 . (Remember to divide the income by 100, since the data for the variable income is in hundreds of dollars.)</p>
+<p><span class="math display">\[
+\begin{aligned}
+\hat{food_{exp}}&amp;=83.416+10.20964*20\\
+&amp; = $ 287.608861
+\end{aligned}
+\]</span></p>
+<p>R, however, does this calculations for us with its function called <code>predict()</code>. Let us extend slightly the example to more than one income for which we predict food expenditure, say income = $2000, $2500, and $2700. The function <code>predict()</code> in R requires that the new values of the independent variables be organized under a particular form, called a data frame. Even when we only want to predict for one income, we need the same data-frame structure. In R, a set of numbers is held together using the structure <code>c()</code>. The following sequence shows this example.</p>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="simple-regression-1.html#cb21-1" tabindex="-1"></a>mod1 <span class="ot">&lt;-</span> <span class="fu">lm</span>(food_exp<span class="sc">~</span>income, <span class="at">data=</span>food)</span>
+<span id="cb21-2"><a href="simple-regression-1.html#cb21-2" tabindex="-1"></a>newx <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">income =</span> <span class="fu">c</span>(<span class="dv">20</span>, <span class="dv">25</span>, <span class="dv">27</span>))</span>
+<span id="cb21-3"><a href="simple-regression-1.html#cb21-3" tabindex="-1"></a>yhat <span class="ot">&lt;-</span> <span class="fu">predict</span>(mod1, newx)</span>
+<span id="cb21-4"><a href="simple-regression-1.html#cb21-4" tabindex="-1"></a>yhat                                                 <span class="co"># prints the result</span></span></code></pre></div>
+<pre><code>##     1     2     3 
+## 287.6 338.7 359.1</code></pre>
+<hr />
+</div>
+<div id="assess-regression-coefficients" class="section level3 hasAnchor" number="2.4.3">
+<h3><span class="header-section-number">2.4.3</span> Assess Regression Coefficients<a href="simple-regression-1.html#assess-regression-coefficients" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The regression coefficients <span class="math inline">\(b_1\)</span> and <span class="math inline">\(b_2\)</span> are random variables, because they depend on sample. In this case, we repeated samples to assess regression coefficients. Let us construct a number of random subsamples from the food data and re-calculate <span class="math inline">\(b_1\)</span> and <span class="math inline">\(b_2\)</span> . A random subsample can be constructed using the function <code>sample()</code>, as the following example illustrates only for <span class="math inline">\(b_2\)</span>.</p>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="simple-regression-1.html#cb23-1" tabindex="-1"></a>N <span class="ot">&lt;-</span> <span class="fu">nrow</span>(food)   <span class="co"># returns the number of observations in the dataset</span></span>
+<span id="cb23-2"><a href="simple-regression-1.html#cb23-2" tabindex="-1"></a>C <span class="ot">&lt;-</span> <span class="dv">50</span>           <span class="co"># desired number of subsamples</span></span>
+<span id="cb23-3"><a href="simple-regression-1.html#cb23-3" tabindex="-1"></a>S <span class="ot">&lt;-</span> <span class="dv">38</span>           <span class="co"># desired sample size</span></span>
+<span id="cb23-4"><a href="simple-regression-1.html#cb23-4" tabindex="-1"></a></span>
+<span id="cb23-5"><a href="simple-regression-1.html#cb23-5" tabindex="-1"></a>sumb2 <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<span id="cb23-6"><a href="simple-regression-1.html#cb23-6" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>C){   <span class="co"># a loop over the number of subsamples</span></span>
+<span id="cb23-7"><a href="simple-regression-1.html#cb23-7" tabindex="-1"></a>  <span class="fu">set.seed</span>(<span class="dv">3</span><span class="sc">*</span>i)   <span class="co"># a different seed for each subsample  </span></span>
+<span id="cb23-8"><a href="simple-regression-1.html#cb23-8" tabindex="-1"></a>  subsample <span class="ot">&lt;-</span> food[<span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span>N, <span class="at">size=</span>S, <span class="at">replace=</span><span class="cn">TRUE</span>), ]</span>
+<span id="cb23-9"><a href="simple-regression-1.html#cb23-9" tabindex="-1"></a>  mod2 <span class="ot">&lt;-</span> <span class="fu">lm</span>(food_exp<span class="sc">~</span>income, <span class="at">data=</span>subsample)</span>
+<span id="cb23-10"><a href="simple-regression-1.html#cb23-10" tabindex="-1"></a>  <span class="co">#sum b2 for all subsamples:</span></span>
+<span id="cb23-11"><a href="simple-regression-1.html#cb23-11" tabindex="-1"></a>  sumb2 <span class="ot">&lt;-</span> sumb2 <span class="sc">+</span> <span class="fu">coef</span>(mod2)[[<span class="dv">2</span>]]</span>
+<span id="cb23-12"><a href="simple-regression-1.html#cb23-12" tabindex="-1"></a>}</span>
+<span id="cb23-13"><a href="simple-regression-1.html#cb23-13" tabindex="-1"></a><span class="fu">print</span>(sumb2<span class="sc">/</span>C, <span class="at">digits =</span> <span class="dv">3</span>)</span></code></pre></div>
+<pre><code>## [1] 9.89</code></pre>
+<p>The result, <span class="math inline">\(b_2=9.88\)</span>, is the average of 50 estimates of <span class="math inline">\(b_2\)</span>.</p>
+<hr />
+</div>
+<div id="estimated-var-and-cov" class="section level3 hasAnchor" number="2.4.4">
+<h3><span class="header-section-number">2.4.4</span> Estimated Var and Cov<a href="simple-regression-1.html#estimated-var-and-cov" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Many applications require estimates of the variances and covariances of the regression coefficients. R stores them in the a matrix <code>vcov()</code>:</p>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="simple-regression-1.html#cb25-1" tabindex="-1"></a>(varb1 <span class="ot">&lt;-</span> <span class="fu">vcov</span>(mod1)[<span class="dv">1</span>, <span class="dv">1</span>])</span></code></pre></div>
+<pre><code>## [1] 1884</code></pre>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="simple-regression-1.html#cb27-1" tabindex="-1"></a>(varb2 <span class="ot">&lt;-</span> <span class="fu">vcov</span>(mod1)[<span class="dv">2</span>, <span class="dv">2</span>])</span></code></pre></div>
+<pre><code>## [1] 4.382</code></pre>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="simple-regression-1.html#cb29-1" tabindex="-1"></a>(covb1b2 <span class="ot">&lt;-</span> <span class="fu">vcov</span>(mod1)[<span class="dv">1</span>,<span class="dv">2</span>])</span></code></pre></div>
+<pre><code>## [1] -85.9</code></pre>
+</div>
+<div id="non-linear-relationships" class="section level3 hasAnchor" number="2.4.5">
+<h3><span class="header-section-number">2.4.5</span> Non-Linear Relationships<a href="simple-regression-1.html#non-linear-relationships" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Sometimes the scatter plot diagram or some theoretical consideraions suggest a non-linear relationship. The most popular non-linear relationships involve logarithms of the dependent or independent variables and polinomial functions. The quadratic model requires the square of the independent variable.</p>
+<p><span class="math display">\[
+\begin{aligned}
+Y=\beta_1+\beta_2*X^2+e\\
+\end{aligned}
+\]</span>
+In R, independent variables involving mathematical operators can be included in a regression equation with the function <code>I()</code>. The following example uses the dataset br from the package <code>PoEdata</code>, which includes the sale prices and the attributes of 1080 houses in Baton Rouge, LA. price is the sale price in dollars, and sqft is the surface area in square feet.</p>
+<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="simple-regression-1.html#cb31-1" tabindex="-1"></a><span class="fu">data</span>(br)</span>
+<span id="cb31-2"><a href="simple-regression-1.html#cb31-2" tabindex="-1"></a>mod2 <span class="ot">&lt;-</span> <span class="fu">lm</span>(price<span class="sc">~</span><span class="fu">I</span>(sqft<span class="sc">^</span><span class="dv">2</span>), <span class="at">data=</span>br)</span>
+<span id="cb31-3"><a href="simple-regression-1.html#cb31-3" tabindex="-1"></a>b1 <span class="ot">&lt;-</span> <span class="fu">coef</span>(mod2)[[<span class="dv">1</span>]]</span>
+<span id="cb31-4"><a href="simple-regression-1.html#cb31-4" tabindex="-1"></a>b2 <span class="ot">&lt;-</span> <span class="fu">coef</span>(mod2)[[<span class="dv">2</span>]]</span>
+<span id="cb31-5"><a href="simple-regression-1.html#cb31-5" tabindex="-1"></a>sqftx<span class="ot">=</span><span class="fu">c</span>(<span class="dv">2000</span>, <span class="dv">4000</span>, <span class="dv">6000</span>)            <span class="co"># given values for sqft</span></span>
+<span id="cb31-6"><a href="simple-regression-1.html#cb31-6" tabindex="-1"></a>pricex<span class="ot">=</span>b1<span class="sc">+</span>b2<span class="sc">*</span>sqftx<span class="sc">^</span><span class="dv">2</span>                 <span class="co"># prices corresponding to given sqft </span></span>
+<span id="cb31-7"><a href="simple-regression-1.html#cb31-7" tabindex="-1"></a>DpriceDsqft <span class="ot">&lt;-</span> <span class="dv">2</span><span class="sc">*</span>b2<span class="sc">*</span>sqftx            <span class="co"># marginal effect of sqft on price</span></span>
+<span id="cb31-8"><a href="simple-regression-1.html#cb31-8" tabindex="-1"></a>elasticity<span class="ot">=</span>DpriceDsqft<span class="sc">*</span>sqftx<span class="sc">/</span>pricex </span>
+<span id="cb31-9"><a href="simple-regression-1.html#cb31-9" tabindex="-1"></a>b1; b2; DpriceDsqft; elasticity      <span class="co"># prints results</span></span></code></pre></div>
+<pre><code>## [1] 55777</code></pre>
+<pre><code>## [1] 0.01542</code></pre>
+<pre><code>## [1]  61.69 123.37 185.06</code></pre>
+<pre><code>## [1] 1.050 1.631 1.817</code></pre>
+<p>We woud like now to draw a scatter diagram and see how the quadratic function fits the data. The next chunk of code provides two alternatives for constructing such a graph. The first simply draws the quadratic function on the scatter diagram, using the R function <code>curve()</code>; the second uses the function lines, which requires ordering the data set in increasing values of <code>sqft</code> before the regression model is evaluated, such that the resulting fitted values will also come out in the same order.</p>
+<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="simple-regression-1.html#cb36-1" tabindex="-1"></a><span class="fu">plot</span>(br<span class="sc">$</span>sqft, br<span class="sc">$</span>price, <span class="at">xlab=</span><span class="st">&quot;Total square feet&quot;</span>, </span>
+<span id="cb36-2"><a href="simple-regression-1.html#cb36-2" tabindex="-1"></a>     <span class="at">ylab=</span><span class="st">&quot;Sale price, $&quot;</span>, <span class="at">col=</span><span class="st">&quot;grey&quot;</span>)</span>
+<span id="cb36-3"><a href="simple-regression-1.html#cb36-3" tabindex="-1"></a><span class="co">#add the quadratic curve to the scatter plot:</span></span>
+<span id="cb36-4"><a href="simple-regression-1.html#cb36-4" tabindex="-1"></a><span class="fu">curve</span>(b1<span class="sc">+</span>b2<span class="sc">*</span>x<span class="sc">^</span><span class="dv">2</span>, <span class="at">col=</span><span class="st">&quot;red&quot;</span>, <span class="at">add=</span><span class="cn">TRUE</span>) </span></code></pre></div>
+<p><img src="Econometrics_files/figure-html/unnamed-chunk-16-1.png" width="672" /></p>
+<p>An alternative way to draw the fitted curve:</p>
+<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="simple-regression-1.html#cb37-1" tabindex="-1"></a>ordat <span class="ot">&lt;-</span> br[<span class="fu">order</span>(br<span class="sc">$</span>sqft), ] <span class="co">#sorts the dataset after `sqft`</span></span>
+<span id="cb37-2"><a href="simple-regression-1.html#cb37-2" tabindex="-1"></a>mod2 <span class="ot">&lt;-</span> <span class="fu">lm</span>(price<span class="sc">~</span><span class="fu">I</span>(sqft<span class="sc">^</span><span class="dv">2</span>), <span class="at">data=</span>ordat)</span>
+<span id="cb37-3"><a href="simple-regression-1.html#cb37-3" tabindex="-1"></a><span class="fu">plot</span>(br<span class="sc">$</span>sqft, br<span class="sc">$</span>price, </span>
+<span id="cb37-4"><a href="simple-regression-1.html#cb37-4" tabindex="-1"></a>     <span class="at">main=</span><span class="st">&quot;Dataset ordered after &#39;sqft&#39; &quot;</span>, </span>
+<span id="cb37-5"><a href="simple-regression-1.html#cb37-5" tabindex="-1"></a>     <span class="at">xlab=</span><span class="st">&quot;Total square feet&quot;</span>, </span>
+<span id="cb37-6"><a href="simple-regression-1.html#cb37-6" tabindex="-1"></a>     <span class="at">ylab=</span><span class="st">&quot;Sale price, $&quot;</span>, <span class="at">col=</span><span class="st">&quot;grey&quot;</span>)</span>
+<span id="cb37-7"><a href="simple-regression-1.html#cb37-7" tabindex="-1"></a><span class="fu">lines</span>(<span class="fu">fitted</span>(mod31)<span class="sc">~</span>ordat<span class="sc">$</span>sqft, <span class="at">col=</span><span class="st">&quot;red&quot;</span>)</span></code></pre></div>
+<p>The log-linear model regresses the log of the dependent variable on a linear expression of the independent variable (unless otherwise specified, the log notation stands for natural logarithm, following a usual convention in economics):</p>
+<p><span class="math display">\[
+\begin{aligned}
+Log(Y)=\beta_1+\beta_2*X+e\\
+\end{aligned}
+\]</span></p>
+<p>One of the reasons to use the log of an independent variable is to make its distribution closer to the normal distribution. Let us draw the histograms of price and log(price) to compare them</p>
+<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="simple-regression-1.html#cb38-1" tabindex="-1"></a><span class="fu">hist</span>(br<span class="sc">$</span>price, <span class="at">col=</span><span class="st">&#39;grey&#39;</span>)</span></code></pre></div>
+<p><img src="Econometrics_files/figure-html/unnamed-chunk-18-1.png" width="672" /></p>
+<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="simple-regression-1.html#cb39-1" tabindex="-1"></a><span class="fu">hist</span>(<span class="fu">log</span>(br<span class="sc">$</span>price), <span class="at">col=</span><span class="st">&#39;grey&#39;</span>)</span></code></pre></div>
+<p><img src="Econometrics_files/figure-html/unnamed-chunk-18-2.png" width="672" /></p>
+<p>We are interested, as before, in the estimates of the coefficients and their interpretation, in the fitted values of price, and in the marginal effect of an increase in sqft on price.</p>
+<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb40-1"><a href="simple-regression-1.html#cb40-1" tabindex="-1"></a>mod3 <span class="ot">&lt;-</span> <span class="fu">lm</span>(<span class="fu">log</span>(price)<span class="sc">~</span>sqft, <span class="at">data=</span>br)</span>
+<span id="cb40-2"><a href="simple-regression-1.html#cb40-2" tabindex="-1"></a>mod3<span class="sc">$</span>coefficients</span></code></pre></div>
+<pre><code>## (Intercept)        sqft 
+##   1.084e+01   4.113e-04</code></pre>
+<p>The coefficients are <span class="math inline">\(b_1= 10.84\)</span> and <span class="math inline">\(b_2= 0.00041\)</span>, showing that an increase in the surface area (sqft) of an apartment by one unit (1 sqft) increases the price of the apartment by 0.041 percent. Thus, for a house price of $100,000, an increase of 100 sqft will increase the price by approximately 100∗0.041 percent, which is equal to $4112.7. In general, the marginal effect of an increase in <span class="math inline">\(X\)</span> on <span class="math inline">\(Y\)</span> in Equation 19 is</p>
+<p><span class="math display">\[
+\begin{aligned}
+{dy\over dx}=\beta_2 * Y
+\end{aligned}
+\]</span></p>
+<p>and the elasticity is</p>
+<p><span class="math display">\[
+\begin{aligned}
+e= {dy\over dx} {X\over Y}=\beta_2 * X
+\end{aligned}
+\]</span></p>
+<p>The next lines of code show how to draw the fitted values curve of the loglinear model and how to calculate the marginal effect and the elasticity for the median price in the dataset. The fitted values are here calculated using the formula</p>
+<p><span class="math display">\[
+\begin{aligned}
+\hat{Y}= e^{b_1+b_2*X}
+\end{aligned}
+\]</span></p>
+<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb42-1"><a href="simple-regression-1.html#cb42-1" tabindex="-1"></a>ordat <span class="ot">&lt;-</span> br[<span class="fu">order</span>(br<span class="sc">$</span>sqft), ] <span class="co">#order the dataset</span></span>
+<span id="cb42-2"><a href="simple-regression-1.html#cb42-2" tabindex="-1"></a>mod4 <span class="ot">&lt;-</span> <span class="fu">lm</span>(<span class="fu">log</span>(price)<span class="sc">~</span>sqft, <span class="at">data=</span>ordat)</span>
+<span id="cb42-3"><a href="simple-regression-1.html#cb42-3" tabindex="-1"></a><span class="fu">plot</span>(br<span class="sc">$</span>sqft, br<span class="sc">$</span>price, <span class="at">col=</span><span class="st">&quot;grey&quot;</span>)</span>
+<span id="cb42-4"><a href="simple-regression-1.html#cb42-4" tabindex="-1"></a><span class="fu">lines</span>(<span class="fu">exp</span>(<span class="fu">fitted</span>(mod4))<span class="sc">~</span>ordat<span class="sc">$</span>sqft, </span>
+<span id="cb42-5"><a href="simple-regression-1.html#cb42-5" tabindex="-1"></a>      <span class="at">col=</span><span class="st">&quot;blue&quot;</span>, <span class="at">main=</span><span class="st">&quot;Log-linear Model&quot;</span>)</span></code></pre></div>
+<p><img src="Econometrics_files/figure-html/unnamed-chunk-20-1.png" width="672" /></p>
+<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="simple-regression-1.html#cb43-1" tabindex="-1"></a>pricex<span class="ot">&lt;-</span> <span class="fu">median</span>(br<span class="sc">$</span>price)</span>
+<span id="cb43-2"><a href="simple-regression-1.html#cb43-2" tabindex="-1"></a>sqftx <span class="ot">&lt;-</span> (<span class="fu">log</span>(pricex)<span class="sc">-</span><span class="fu">coef</span>(mod4)[[<span class="dv">1</span>]])<span class="sc">/</span><span class="fu">coef</span>(mod4)[[<span class="dv">2</span>]]</span>
+<span id="cb43-3"><a href="simple-regression-1.html#cb43-3" tabindex="-1"></a>(DyDx <span class="ot">&lt;-</span> pricex<span class="sc">*</span><span class="fu">coef</span>(mod4)[[<span class="dv">2</span>]])</span></code></pre></div>
+<pre><code>## [1] 53.46</code></pre>
+<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="simple-regression-1.html#cb45-1" tabindex="-1"></a>(elasticity <span class="ot">&lt;-</span> sqftx<span class="sc">*</span><span class="fu">coef</span>(mod4)[[<span class="dv">2</span>]])</span></code></pre></div>
+<pre><code>## [1] 0.9367</code></pre>
+<p>R allows us to calculate the same quantities for several (sqft, price) pairs at a time, as shown in the following sequence:</p>
+<div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb47-1"><a href="simple-regression-1.html#cb47-1" tabindex="-1"></a>b1 <span class="ot">&lt;-</span> <span class="fu">coef</span>(mod4)[[<span class="dv">1</span>]]</span>
+<span id="cb47-2"><a href="simple-regression-1.html#cb47-2" tabindex="-1"></a>b2 <span class="ot">&lt;-</span> <span class="fu">coef</span>(mod4)[[<span class="dv">2</span>]]</span>
+<span id="cb47-3"><a href="simple-regression-1.html#cb47-3" tabindex="-1"></a><span class="co">#pick a few values for sqft:</span></span>
+<span id="cb47-4"><a href="simple-regression-1.html#cb47-4" tabindex="-1"></a>sqftx <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">2000</span>, <span class="dv">3000</span>, <span class="dv">4000</span>) </span>
+<span id="cb47-5"><a href="simple-regression-1.html#cb47-5" tabindex="-1"></a><span class="co">#estimate prices for those and add one more:</span></span>
+<span id="cb47-6"><a href="simple-regression-1.html#cb47-6" tabindex="-1"></a>pricex <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">100000</span>, <span class="fu">exp</span>(b1<span class="sc">+</span>b2<span class="sc">*</span>sqftx)) </span>
+<span id="cb47-7"><a href="simple-regression-1.html#cb47-7" tabindex="-1"></a><span class="co">#re-calculate sqft for all prices:</span></span>
+<span id="cb47-8"><a href="simple-regression-1.html#cb47-8" tabindex="-1"></a>sqftx <span class="ot">&lt;-</span> (<span class="fu">log</span>(pricex)<span class="sc">-</span>b1)<span class="sc">/</span>b2 </span>
+<span id="cb47-9"><a href="simple-regression-1.html#cb47-9" tabindex="-1"></a><span class="co">#calculate and print elasticities:</span></span>
+<span id="cb47-10"><a href="simple-regression-1.html#cb47-10" tabindex="-1"></a>(elasticities <span class="ot">&lt;-</span> b2<span class="sc">*</span>sqftx) </span></code></pre></div>
+<pre><code>## [1] 0.6743 0.8225 1.2338 1.6451</code></pre>
+<hr />
+</div>
+<div id="indicator-variables" class="section level3 hasAnchor" number="2.4.6">
+<h3><span class="header-section-number">2.4.6</span> Indicator Variables<a href="simple-regression-1.html#indicator-variables" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>An indicator, or binary variable marks the presence or the absence of some attribute of the observational unit, such as gender or race if the observational unit is an individual, or location if the observational unit is a house. In the dataset <code>utown</code>, the variable <code>utown</code> is 1 if a house is close to the university and 0 otherwise. Here is a simple linear regression model that involves the variable u<code>town</code>:</p>
+<p><span class="math display">\[
+\begin{align}
+price_i= \beta_1+\beta_2*utwon_i
+\end{align}
+\]</span></p>
+<p>The coefficient of such a variable in a simple linear model is equal to the difference between the average prices of the two categories; the intercept coefficient of the model in Equation 22 is equal to the average price of the houses that are not close to university. Let us first calculate the average prices for each category, wich are denoted in the following sequence of code <code>price0bar</code> and <code>price1bar</code>:</p>
+<div class="sourceCode" id="cb49"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb49-1"><a href="simple-regression-1.html#cb49-1" tabindex="-1"></a><span class="fu">data</span>(utown)</span>
+<span id="cb49-2"><a href="simple-regression-1.html#cb49-2" tabindex="-1"></a>price0bar <span class="ot">&lt;-</span> <span class="fu">mean</span>(utown<span class="sc">$</span>price[<span class="fu">which</span>(utown<span class="sc">$</span>utown<span class="sc">==</span><span class="dv">0</span>)])</span>
+<span id="cb49-3"><a href="simple-regression-1.html#cb49-3" tabindex="-1"></a>price1bar <span class="ot">&lt;-</span> <span class="fu">mean</span>(utown<span class="sc">$</span>price[<span class="fu">which</span>(utown<span class="sc">$</span>utown<span class="sc">==</span><span class="dv">1</span>)])</span></code></pre></div>
+<p>The results are: <span class="math inline">\(\bar{price}=\)</span> 277.2416 close to university, and <span class="math inline">\(\bar{price}=\)</span> 215.7325for those not close. I now show that the same results yield the coefficients of the regression model in Equation 22:</p>
+<div class="sourceCode" id="cb50"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb50-1"><a href="simple-regression-1.html#cb50-1" tabindex="-1"></a>mod4 <span class="ot">&lt;-</span> <span class="fu">lm</span>(price<span class="sc">~</span>utown, <span class="at">data=</span>utown)</span>
+<span id="cb50-2"><a href="simple-regression-1.html#cb50-2" tabindex="-1"></a>b1 <span class="ot">&lt;-</span> <span class="fu">coef</span>(mod4)[[<span class="dv">1</span>]] </span>
+<span id="cb50-3"><a href="simple-regression-1.html#cb50-3" tabindex="-1"></a>b2 <span class="ot">&lt;-</span> <span class="fu">coef</span>(mod4)[[<span class="dv">2</span>]]</span>
+<span id="cb50-4"><a href="simple-regression-1.html#cb50-4" tabindex="-1"></a>b1</span></code></pre></div>
+<pre><code>## [1] 215.7</code></pre>
+<div class="sourceCode" id="cb52"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb52-1"><a href="simple-regression-1.html#cb52-1" tabindex="-1"></a>b2</span></code></pre></div>
+<pre><code>## [1] 61.51</code></pre>
+<p>The results are: <span class="math inline">\(\bar{price}=b_1=\)</span> 215.7325 for non-university houses, and <span class="math inline">\(\bar{price}=b_1+b_2=\)</span> 277.2416 for university houses.</p>
+</div>
+<div id="monte-carlo-simulation" class="section level3 hasAnchor" number="2.4.7">
+<h3><span class="header-section-number">2.4.7</span> Monte Carlo Simulation<a href="simple-regression-1.html#monte-carlo-simulation" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>A Monte Carlo simulation generates random values for the dependent variable when the regression coefficients and the distribution of the random term are given. The following example seeks to determine the distribution of the independent variable in the food expenditure model in Equation 2,</p>
+<div class="sourceCode" id="cb54"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb54-1"><a href="simple-regression-1.html#cb54-1" tabindex="-1"></a>N <span class="ot">&lt;-</span> <span class="dv">40</span></span>
+<span id="cb54-2"><a href="simple-regression-1.html#cb54-2" tabindex="-1"></a>x1 <span class="ot">&lt;-</span> <span class="dv">10</span></span>
+<span id="cb54-3"><a href="simple-regression-1.html#cb54-3" tabindex="-1"></a>x2 <span class="ot">&lt;-</span> <span class="dv">20</span></span>
+<span id="cb54-4"><a href="simple-regression-1.html#cb54-4" tabindex="-1"></a>b1 <span class="ot">&lt;-</span> <span class="dv">100</span></span>
+<span id="cb54-5"><a href="simple-regression-1.html#cb54-5" tabindex="-1"></a>b2 <span class="ot">&lt;-</span> <span class="dv">10</span></span>
+<span id="cb54-6"><a href="simple-regression-1.html#cb54-6" tabindex="-1"></a>mu <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<span id="cb54-7"><a href="simple-regression-1.html#cb54-7" tabindex="-1"></a>sig2e <span class="ot">&lt;-</span> <span class="dv">2500</span></span>
+<span id="cb54-8"><a href="simple-regression-1.html#cb54-8" tabindex="-1"></a>sde <span class="ot">&lt;-</span> <span class="fu">sqrt</span>(sig2e)</span>
+<span id="cb54-9"><a href="simple-regression-1.html#cb54-9" tabindex="-1"></a>yhat1 <span class="ot">&lt;-</span> b1<span class="sc">+</span>b2<span class="sc">*</span>x1</span>
+<span id="cb54-10"><a href="simple-regression-1.html#cb54-10" tabindex="-1"></a>yhat2 <span class="ot">&lt;-</span> b1<span class="sc">+</span>b2<span class="sc">*</span>x2</span>
+<span id="cb54-11"><a href="simple-regression-1.html#cb54-11" tabindex="-1"></a><span class="fu">curve</span>(<span class="fu">dnorm</span>(x, <span class="at">mean=</span>yhat1, <span class="at">sd=</span>sde), <span class="dv">0</span>, <span class="dv">500</span>, <span class="at">col=</span><span class="st">&quot;blue&quot;</span>)</span>
+<span id="cb54-12"><a href="simple-regression-1.html#cb54-12" tabindex="-1"></a><span class="fu">curve</span>(<span class="fu">dnorm</span>(x, yhat2, sde), <span class="dv">0</span>,<span class="dv">500</span>, <span class="at">add=</span><span class="cn">TRUE</span>, <span class="at">col=</span><span class="st">&quot;red&quot;</span>)</span>
+<span id="cb54-13"><a href="simple-regression-1.html#cb54-13" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">v=</span>yhat1, <span class="at">col=</span><span class="st">&quot;blue&quot;</span>, <span class="at">lty=</span><span class="dv">2</span>)</span>
+<span id="cb54-14"><a href="simple-regression-1.html#cb54-14" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">v=</span>yhat2, <span class="at">col=</span><span class="st">&quot;red&quot;</span>, <span class="at">lty=</span><span class="dv">2</span>)</span>
+<span id="cb54-15"><a href="simple-regression-1.html#cb54-15" tabindex="-1"></a><span class="fu">legend</span>(<span class="st">&quot;topright&quot;</span>, <span class="at">legend=</span><span class="fu">c</span>(<span class="st">&quot;f(y|x=10)&quot;</span>, </span>
+<span id="cb54-16"><a href="simple-regression-1.html#cb54-16" tabindex="-1"></a>                            <span class="st">&quot;f(y|x=20)&quot;</span>), <span class="at">lty=</span><span class="dv">1</span>,</span>
+<span id="cb54-17"><a href="simple-regression-1.html#cb54-17" tabindex="-1"></a>       <span class="at">col=</span><span class="fu">c</span>(<span class="st">&quot;blue&quot;</span>, <span class="st">&quot;red&quot;</span>))</span></code></pre></div>
+<p><img src="Econometrics_files/figure-html/unnamed-chunk-26-1.png" width="672" /></p>
+<p>Next, we calculate the variance of <span class="math inline">\(b_2\)</span> and plot the corresponding density function.</p>
+<p><span class="math display">\[
+\begin{align}
+var(b_2)={\sigma^2 \over \sum(x_i−\bar{x})}
+\end{align}
+\]</span></p>
+<div class="sourceCode" id="cb55"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb55-1"><a href="simple-regression-1.html#cb55-1" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fu">rep</span>(x1, N<span class="sc">/</span><span class="dv">2</span>), <span class="fu">rep</span>(x2,N<span class="sc">/</span><span class="dv">2</span>))</span>
+<span id="cb55-2"><a href="simple-regression-1.html#cb55-2" tabindex="-1"></a>xbar <span class="ot">&lt;-</span> <span class="fu">mean</span>(x)</span>
+<span id="cb55-3"><a href="simple-regression-1.html#cb55-3" tabindex="-1"></a>sumx2 <span class="ot">&lt;-</span> <span class="fu">sum</span>((x<span class="sc">-</span>xbar)<span class="sc">^</span><span class="dv">2</span>)</span>
+<span id="cb55-4"><a href="simple-regression-1.html#cb55-4" tabindex="-1"></a>varb2 <span class="ot">&lt;-</span> sig2e<span class="sc">/</span>sumx2</span>
+<span id="cb55-5"><a href="simple-regression-1.html#cb55-5" tabindex="-1"></a>sdb2 <span class="ot">&lt;-</span> <span class="fu">sqrt</span>(varb2)</span>
+<span id="cb55-6"><a href="simple-regression-1.html#cb55-6" tabindex="-1"></a>leftlim <span class="ot">&lt;-</span> b2<span class="dv">-3</span><span class="sc">*</span>sdb2</span>
+<span id="cb55-7"><a href="simple-regression-1.html#cb55-7" tabindex="-1"></a>rightlim <span class="ot">&lt;-</span> b2<span class="sc">+</span><span class="dv">3</span><span class="sc">*</span>sdb2</span>
+<span id="cb55-8"><a href="simple-regression-1.html#cb55-8" tabindex="-1"></a><span class="fu">curve</span>(<span class="fu">dnorm</span>(x, <span class="at">mean=</span>b2, <span class="at">sd=</span>sdb2), leftlim, rightlim)</span>
+<span id="cb55-9"><a href="simple-regression-1.html#cb55-9" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">v=</span>b2, <span class="at">lty=</span><span class="dv">2</span>)</span></code></pre></div>
+<p><img src="Econometrics_files/figure-html/unnamed-chunk-27-1.png" width="672" /></p>
+<p>Now, with the same values of <span class="math inline">\(b_1\)</span> , <span class="math inline">\(b_2\)</span> , and error standard deviation, we can generate a set of values for <span class="math inline">\(Y\)</span> , regress <span class="math inline">\(Y\)</span> on <span class="math inline">\(X\)</span> , and calculate an estimated values for the coefficient <span class="math inline">\(b_2\)</span> and its standard error.</p>
+<div class="sourceCode" id="cb56"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb56-1"><a href="simple-regression-1.html#cb56-1" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">12345</span>)</span>
+<span id="cb56-2"><a href="simple-regression-1.html#cb56-2" tabindex="-1"></a>y <span class="ot">&lt;-</span> b1<span class="sc">+</span>b2<span class="sc">*</span>x<span class="sc">+</span><span class="fu">rnorm</span>(N, <span class="at">mean=</span><span class="dv">0</span>, <span class="at">sd=</span>sde)</span>
+<span id="cb56-3"><a href="simple-regression-1.html#cb56-3" tabindex="-1"></a>mod6 <span class="ot">&lt;-</span> <span class="fu">lm</span>(y<span class="sc">~</span>x)</span>
+<span id="cb56-4"><a href="simple-regression-1.html#cb56-4" tabindex="-1"></a>b1hat <span class="ot">&lt;-</span> <span class="fu">coef</span>(mod6)[[<span class="dv">1</span>]]</span>
+<span id="cb56-5"><a href="simple-regression-1.html#cb56-5" tabindex="-1"></a>b2hat <span class="ot">&lt;-</span> <span class="fu">coef</span>(mod6)[[<span class="dv">2</span>]]</span>
+<span id="cb56-6"><a href="simple-regression-1.html#cb56-6" tabindex="-1"></a>mod6summary <span class="ot">&lt;-</span> <span class="fu">summary</span>(mod6) <span class="co">#the summary contains the standard errors</span></span>
+<span id="cb56-7"><a href="simple-regression-1.html#cb56-7" tabindex="-1"></a>seb2hat <span class="ot">&lt;-</span> <span class="fu">coef</span>(mod6summary)[<span class="dv">2</span>,<span class="dv">2</span>]</span></code></pre></div>
+<p>The results are <span class="math inline">\(b_2=11.64\)</span> and <span class="math inline">\(s_e(b_2)=1.64\)</span>. The strength of a Monte Carlo simulation is, however, the possibility of repeating the estimation of the regression parameters for a large number of automatically generated samples. Thus, we can obtain a large number of values for a parameter, say <span class="math inline">\(b_2\)</span> , and then determine its sampling characteristics. For instance, if the mean of these values is close to the initially asumed value <span class="math inline">\(b_2= 10\)</span>, we conclude that our estimator (the method of estimating the parameter) is unbiased.</p>
+<p>We are going to use this time the values of <span class="math inline">\(X\)</span> in the food dataset, and generate <span class="math inline">\(Y\)</span> using the linear model with <span class="math inline">\(b_1=100\)</span> and <span class="math inline">\(b_2= 10.\)</span></p>
+<div class="sourceCode" id="cb57"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb57-1"><a href="simple-regression-1.html#cb57-1" tabindex="-1"></a><span class="fu">data</span>(<span class="st">&quot;food&quot;</span>)</span>
+<span id="cb57-2"><a href="simple-regression-1.html#cb57-2" tabindex="-1"></a>N <span class="ot">&lt;-</span> <span class="dv">40</span></span>
+<span id="cb57-3"><a href="simple-regression-1.html#cb57-3" tabindex="-1"></a>sde <span class="ot">&lt;-</span> <span class="dv">50</span></span>
+<span id="cb57-4"><a href="simple-regression-1.html#cb57-4" tabindex="-1"></a>x <span class="ot">&lt;-</span> food<span class="sc">$</span>income</span>
+<span id="cb57-5"><a href="simple-regression-1.html#cb57-5" tabindex="-1"></a>nrsim <span class="ot">&lt;-</span> <span class="dv">1000</span></span>
+<span id="cb57-6"><a href="simple-regression-1.html#cb57-6" tabindex="-1"></a>b1 <span class="ot">&lt;-</span> <span class="dv">100</span></span>
+<span id="cb57-7"><a href="simple-regression-1.html#cb57-7" tabindex="-1"></a>b2 <span class="ot">&lt;-</span> <span class="dv">10</span></span>
+<span id="cb57-8"><a href="simple-regression-1.html#cb57-8" tabindex="-1"></a>vb2 <span class="ot">&lt;-</span> <span class="fu">numeric</span>(nrsim) <span class="co">#stores the estimates of b2</span></span>
+<span id="cb57-9"><a href="simple-regression-1.html#cb57-9" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>nrsim){</span>
+<span id="cb57-10"><a href="simple-regression-1.html#cb57-10" tabindex="-1"></a>  <span class="fu">set.seed</span>(<span class="dv">12345</span><span class="sc">+</span><span class="dv">10</span><span class="sc">*</span>i)</span>
+<span id="cb57-11"><a href="simple-regression-1.html#cb57-11" tabindex="-1"></a>  y <span class="ot">&lt;-</span> b1<span class="sc">+</span>b2<span class="sc">*</span>x<span class="sc">+</span><span class="fu">rnorm</span>(N, <span class="at">mean=</span><span class="dv">0</span>, <span class="at">sd=</span>sde)</span>
+<span id="cb57-12"><a href="simple-regression-1.html#cb57-12" tabindex="-1"></a>  mod7 <span class="ot">&lt;-</span> <span class="fu">lm</span>(y<span class="sc">~</span>x)</span>
+<span id="cb57-13"><a href="simple-regression-1.html#cb57-13" tabindex="-1"></a>  vb2[i] <span class="ot">&lt;-</span> <span class="fu">coef</span>(mod7)[[<span class="dv">2</span>]]</span>
+<span id="cb57-14"><a href="simple-regression-1.html#cb57-14" tabindex="-1"></a>}</span>
+<span id="cb57-15"><a href="simple-regression-1.html#cb57-15" tabindex="-1"></a>mb2 <span class="ot">&lt;-</span> <span class="fu">mean</span>(vb2)</span>
+<span id="cb57-16"><a href="simple-regression-1.html#cb57-16" tabindex="-1"></a>seb2 <span class="ot">&lt;-</span> <span class="fu">sd</span>(vb2)</span></code></pre></div>
+<p>The mean and standard deviation of the estimated 40 values of <span class="math inline">\(b_2\)</span> are, respectively, 9.974985 and 1.152632. Figure bellow shows the simulated distribution of <span class="math inline">\(b_2\)</span> and the theoretical one.</p>
+<div class="sourceCode" id="cb58"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb58-1"><a href="simple-regression-1.html#cb58-1" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">density</span>(vb2))</span>
+<span id="cb58-2"><a href="simple-regression-1.html#cb58-2" tabindex="-1"></a><span class="fu">curve</span>(<span class="fu">dnorm</span>(x, mb2, seb2), <span class="at">col=</span><span class="st">&quot;red&quot;</span>, <span class="at">add=</span><span class="cn">TRUE</span>)</span>
+<span id="cb58-3"><a href="simple-regression-1.html#cb58-3" tabindex="-1"></a><span class="fu">legend</span>(<span class="st">&quot;topright&quot;</span>, <span class="at">legend=</span><span class="fu">c</span>(<span class="st">&quot;true&quot;</span>, <span class="st">&quot;simulated&quot;</span>), </span>
+<span id="cb58-4"><a href="simple-regression-1.html#cb58-4" tabindex="-1"></a>       <span class="at">lty=</span><span class="dv">1</span>, <span class="at">col=</span><span class="fu">c</span>(<span class="st">&quot;red&quot;</span>, <span class="st">&quot;black&quot;</span>))</span></code></pre></div>
+<p><img src="Econometrics_files/figure-html/unnamed-chunk-30-1.png" width="672" /></p>
+<div class="sourceCode" id="cb59"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb59-1"><a href="simple-regression-1.html#cb59-1" tabindex="-1"></a><span class="fu">hist</span>(vb2, <span class="at">prob=</span><span class="cn">TRUE</span>, <span class="at">ylim=</span><span class="fu">c</span>(<span class="dv">0</span>,.<span class="dv">4</span>))</span>
+<span id="cb59-2"><a href="simple-regression-1.html#cb59-2" tabindex="-1"></a><span class="fu">curve</span>(<span class="fu">dnorm</span>(x, <span class="at">mean=</span>mb2, <span class="at">sd=</span>seb2), <span class="at">col=</span><span class="st">&quot;red&quot;</span>, <span class="at">add=</span><span class="cn">TRUE</span>)</span></code></pre></div>
+<p><img src="Econometrics_files/figure-html/unnamed-chunk-30-2.png" width="672" /></p>
+<div class="sourceCode" id="cb60"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb60-1"><a href="simple-regression-1.html#cb60-1" tabindex="-1"></a><span class="fu">rm</span>(<span class="at">list=</span><span class="fu">ls</span>()) <span class="co"># Caution: this clears the Environment</span></span></code></pre></div>
+
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="introduction-to-econometrics.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="referensi.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook/js/app.min.js"></script>
+<script src="libs/gitbook/js/clipboard.min.js"></script>
+<script src="libs/gitbook/js/plugin-search.js"></script>
+<script src="libs/gitbook/js/plugin-sharing.js"></script>
+<script src="libs/gitbook/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook/js/jquery.highlight.js"></script>
+<script src="libs/gitbook/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

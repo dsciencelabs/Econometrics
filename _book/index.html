@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Ekonometrika</title>
+  <title>Econometrics</title>
   <meta name="description" content="Deskripsi Singkat Tentang Buku" />
   <meta name="generator" content="bookdown 0.35 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Ekonometrika" />
+  <meta property="og:title" content="Econometrics" />
   <meta property="og:type" content="book" />
   <meta property="og:image" content="/images/EBook_Cover.png" />
   <meta property="og:description" content="Deskripsi Singkat Tentang Buku" />
-  <meta name="github-repo" content="dsciencelabs/Ekonometrika" />
+  <meta name="github-repo" content="dsciencelabs/Econometrics" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Ekonometrika" />
+  <meta name="twitter:title" content="Econometrics" />
   
   <meta name="twitter:description" content="Deskripsi Singkat Tentang Buku" />
   <meta name="twitter:image" content="/images/EBook_Cover.png" />
@@ -31,7 +31,7 @@
   
   
 
-<link rel="next" href="bab1.html"/>
+<link rel="next" href="introduction-to-econometrics.html"/>
 <script src="libs/jquery/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook/css/style.css" rel="stylesheet" />
@@ -52,8 +52,80 @@
 <link href="libs/anchor-sections/anchor-sections.css" rel="stylesheet" />
 <link href="libs/anchor-sections/anchor-sections-hash.css" rel="stylesheet" />
 <script src="libs/anchor-sections/anchor-sections.js"></script>
+<script src="libs/htmlwidgets/htmlwidgets.js"></script>
+<link href="libs/datatables-css/datatables-crosstalk.css" rel="stylesheet" />
+<script src="libs/datatables-binding/datatables.js"></script>
+<link href="libs/dt-core/css/jquery.dataTables.min.css" rel="stylesheet" />
+<link href="libs/dt-core/css/jquery.dataTables.extra.css" rel="stylesheet" />
+<script src="libs/dt-core/js/jquery.dataTables.min.js"></script>
+<link href="libs/crosstalk/css/crosstalk.min.css" rel="stylesheet" />
+<script src="libs/crosstalk/js/crosstalk.min.js"></script>
 
 
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
 
 <style type="text/css">
   
@@ -76,26 +148,53 @@
 <li><center><img src="images/logo.png" alt="logo" width="50%" height="50%"style="margin: 15px 0 0 0"></center></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Kata Pengantar</a>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Foreword</a>
 <ul>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html#ringkasan-materi"><i class="fa fa-check"></i>Ringkasan Materi</a></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html#penulis"><i class="fa fa-check"></i>Penulis</a></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html#ucapan-terima-kasih"><i class="fa fa-check"></i>Ucapan Terima Kasih</a></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html#masukan-saran"><i class="fa fa-check"></i>Masukan &amp; Saran</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#summary"><i class="fa fa-check"></i>Summary</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#writer"><i class="fa fa-check"></i>Writer</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#my-gratitude"><i class="fa fa-check"></i>My Gratitude</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#feedback-suggestions"><i class="fa fa-check"></i>Feedback &amp; Suggestions</a></li>
 </ul></li>
-<li class="chapter" data-level="1" data-path="bab1.html"><a href="bab1.html"><i class="fa fa-check"></i><b>1</b> Bab1</a>
+<li class="chapter" data-level="1" data-path="introduction-to-econometrics.html"><a href="introduction-to-econometrics.html"><i class="fa fa-check"></i><b>1</b> Introduction to Econometrics</a>
 <ul>
-<li class="chapter" data-level="1.1" data-path="bab1.html"><a href="bab1.html#praktikum"><i class="fa fa-check"></i><b>1.1</b> Praktikum</a></li>
-</ul></li>
-<li class="chapter" data-level="2" data-path="bab2.html"><a href="bab2.html"><i class="fa fa-check"></i><b>2</b> Bab2</a>
+<li class="chapter" data-level="1.1" data-path="introduction-to-econometrics.html"><a href="introduction-to-econometrics.html#what-is-econometrics"><i class="fa fa-check"></i><b>1.1</b> What is Econometrics?</a></li>
+<li class="chapter" data-level="1.2" data-path="introduction-to-econometrics.html"><a href="introduction-to-econometrics.html#goals-of-econometrics"><i class="fa fa-check"></i><b>1.2</b> Goals of Econometrics</a></li>
+<li class="chapter" data-level="1.3" data-path="introduction-to-econometrics.html"><a href="introduction-to-econometrics.html#econometric-relations-and-regression"><i class="fa fa-check"></i><b>1.3</b> Econometric Relations and Regression</a></li>
+<li class="chapter" data-level="1.4" data-path="introduction-to-econometrics.html"><a href="introduction-to-econometrics.html#lab-practicum"><i class="fa fa-check"></i><b>1.4</b> Lab Practicum</a>
 <ul>
-<li class="chapter" data-level="2.1" data-path="bab2.html"><a href="bab2.html#praktikum-1"><i class="fa fa-check"></i><b>2.1</b> Praktikum</a></li>
+<li class="chapter" data-level="1.4.1" data-path="introduction-to-econometrics.html"><a href="introduction-to-econometrics.html#simple-regression"><i class="fa fa-check"></i><b>1.4.1</b> Simple Regression</a></li>
+<li class="chapter" data-level="1.4.2" data-path="introduction-to-econometrics.html"><a href="introduction-to-econometrics.html#multiple-regression"><i class="fa fa-check"></i><b>1.4.2</b> Multiple Regression</a></li>
+<li class="chapter" data-level="" data-path="introduction-to-econometrics.html"><a href="introduction-to-econometrics.html#catatan"><i class="fa fa-check"></i>Catatan</a></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="bab3.html"><a href="bab3.html"><i class="fa fa-check"></i><b>3</b> Bab3</a>
+</ul></li>
+<li class="chapter" data-level="2" data-path="simple-regression-1.html"><a href="simple-regression-1.html"><i class="fa fa-check"></i><b>2</b> Simple Regression</a>
 <ul>
-<li class="chapter" data-level="3.1" data-path="bab3.html"><a href="bab3.html#praktikum-2"><i class="fa fa-check"></i><b>3.1</b> Praktikum</a></li>
+<li class="chapter" data-level="2.1" data-path="simple-regression-1.html"><a href="simple-regression-1.html#what-is-regression"><i class="fa fa-check"></i><b>2.1</b> What is Regression?</a></li>
+<li class="chapter" data-level="2.2" data-path="simple-regression-1.html"><a href="simple-regression-1.html#measures-of-the-relationship"><i class="fa fa-check"></i><b>2.2</b> Measures Of The Relationship</a>
+<ul>
+<li class="chapter" data-level="2.2.1" data-path="simple-regression-1.html"><a href="simple-regression-1.html#covariance"><i class="fa fa-check"></i><b>2.2.1</b> Covariance</a></li>
+<li class="chapter" data-level="2.2.2" data-path="simple-regression-1.html"><a href="simple-regression-1.html#correlation"><i class="fa fa-check"></i><b>2.2.2</b> Correlation</a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="referensi.html"><a href="referensi.html"><i class="fa fa-check"></i><b>4</b> Referensi</a></li>
+<li class="chapter" data-level="2.3" data-path="simple-regression-1.html"><a href="simple-regression-1.html#the-general-model"><i class="fa fa-check"></i><b>2.3</b> The General Model</a>
+<ul>
+<li class="chapter" data-level="2.3.1" data-path="simple-regression-1.html"><a href="simple-regression-1.html#slr-the-mathematical-model"><i class="fa fa-check"></i><b>2.3.1</b> SLR: The Mathematical Model</a></li>
+<li class="chapter" data-level="2.3.2" data-path="simple-regression-1.html"><a href="simple-regression-1.html#slr-the-statistical-model"><i class="fa fa-check"></i><b>2.3.2</b> SLR: The Statistical Model</a></li>
+<li class="chapter" data-level="2.3.3" data-path="simple-regression-1.html"><a href="simple-regression-1.html#the-least-squares-principle"><i class="fa fa-check"></i><b>2.3.3</b> The Least Squares Principle</a></li>
+<li class="chapter" data-level="2.3.4" data-path="simple-regression-1.html"><a href="simple-regression-1.html#least-squares-estimators"><i class="fa fa-check"></i><b>2.3.4</b> Least Squares Estimators</a></li>
+<li class="chapter" data-level="2.3.5" data-path="simple-regression-1.html"><a href="simple-regression-1.html#estimate-the-var-and-cov"><i class="fa fa-check"></i><b>2.3.5</b> Estimate the Var and Cov</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="simple-regression-1.html"><a href="simple-regression-1.html#lab-practicum-1"><i class="fa fa-check"></i><b>2.4</b> Lab Practicum</a>
+<ul>
+<li class="chapter" data-level="2.4.1" data-path="simple-regression-1.html"><a href="simple-regression-1.html#estimating-a-linear-regression"><i class="fa fa-check"></i><b>2.4.1</b> Estimating a Linear Regression</a></li>
+<li class="chapter" data-level="2.4.2" data-path="simple-regression-1.html"><a href="simple-regression-1.html#prediction-with-slr-model"><i class="fa fa-check"></i><b>2.4.2</b> Prediction with SLR Model</a></li>
+<li class="chapter" data-level="2.4.3" data-path="simple-regression-1.html"><a href="simple-regression-1.html#assess-regression-coefficients"><i class="fa fa-check"></i><b>2.4.3</b> Assess Regression Coefficients</a></li>
+<li class="chapter" data-level="2.4.4" data-path="simple-regression-1.html"><a href="simple-regression-1.html#estimated-var-and-cov"><i class="fa fa-check"></i><b>2.4.4</b> Estimated Var and Cov</a></li>
+<li class="chapter" data-level="2.4.5" data-path="simple-regression-1.html"><a href="simple-regression-1.html#non-linear-relationships"><i class="fa fa-check"></i><b>2.4.5</b> Non-Linear Relationships</a></li>
+<li class="chapter" data-level="2.4.6" data-path="simple-regression-1.html"><a href="simple-regression-1.html#indicator-variables"><i class="fa fa-check"></i><b>2.4.6</b> Indicator Variables</a></li>
+<li class="chapter" data-level="2.4.7" data-path="simple-regression-1.html"><a href="simple-regression-1.html#monte-carlo-simulation"><i class="fa fa-check"></i><b>2.4.7</b> Monte Carlo Simulation</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="referensi.html"><a href="referensi.html"><i class="fa fa-check"></i><b>3</b> Referensi</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 
@@ -108,7 +207,7 @@
       <div class="body-inner">
         <div class="book-header" role="navigation">
           <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Ekonometrika</a>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Econometrics</a>
           </h1>
         </div>
 
@@ -117,46 +216,46 @@
 
             <section class="normal" id="section-">
 <div id="header">
-<h1 class="title">Ekonometrika</h1>
+<h1 class="title">Econometrics</h1>
 <p class="author"><em>Bakti Siregar, M.Sc</em></p>
 <p class="date"><em>2023-11-29</em></p>
 </div>
-<div id="kata-pengantar" class="section level1 unnumbered hasAnchor">
-<h1>Kata Pengantar<a href="index.html#kata-pengantar" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>Selamat datang dalam dunia yang menarik dan kompleks dari ekonometrika! Buku ini dirancang untuk memberikan pemahaman mendalam tentang konsep-konsep dasar dan aplikasi praktis dalam analisis ekonometrik. Ekonometrika adalah cabang ilmu ekonomi yang menggabungkan teori ekonomi dengan metode matematika dan statistika untuk menguji hipotesis ekonomi dan membuat prediksi tentang fenomena ekonomi di dunia nyata.</p>
-<p>Buku ini disusun dengan tujuan memberikan panduan yang komprehensif, mulai dari dasar-dasar ekonometrika hingga aplikasi canggih yang relevan dengan dunia ekonomi kontemporer. Pembaca akan dibimbing melalui konsep dasar seperti regresi linear, asumsi-asumsi yang mendasari model ekonometrik, hingga teknik-teknik analisis data yang canggih.</p>
-<p>Penekanan diberikan pada penerapan ekonometrika dalam konteks ekonomi modern, dengan studi kasus yang relevan dan contoh-contoh aplikatif. Buku ini juga mengintegrasikan perkembangan terkini dalam bidang ekonometrika, memastikan bahwa pembaca mendapatkan wawasan tentang pendekatan-pendekatan terbaru dan perkembangan metodologi.</p>
+<div id="foreword" class="section level1 unnumbered hasAnchor">
+<h1>Foreword<a href="index.html#foreword" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>Welcome to the exciting and complex world of econometrics! This book is designed to provide an in-depth understanding of the basic concepts and practical applications in econometric analysis. Econometrics is a branch of economics that combines economic theory with mathematical and statistical methods to test economic hypotheses and make predictions about economic phenomena in the real world.</p>
+<p>This book was prepared with the aim of providing a comprehensive guide, starting from the basics of econometrics to advanced applications relevant to the contemporary world of economics. Readers will be guided through basic concepts such as linear regression, the assumptions underlying econometric models, to sophisticated data analysis techniques.</p>
+<p>Emphasis is placed on the application of econometrics in the context of modern economics, with relevant case studies and applicable examples. The book also integrates the latest developments in the field of econometrics, ensuring that readers gain insight into the latest approaches and methodological developments.</p>
 <p><img src="images/EBook_Cover.png" width="50%" style="display: block; margin: auto;" /></p>
-<p>Sebagai penulis, saya berharap bahwa buku ini tidak hanya akan menjadi sumber referensi yang berharga bagi mahasiswa, akademisi, dan praktisi ekonomi, tetapi juga akan menginspirasi minat dan pemahaman lebih lanjut tentang kompleksitas fenomena ekonomi. Saya ingin mengucapkan terima kasih kepada semua yang telah memberikan kontribusi dan dukungan dalam proses penulisan buku ini.</p>
-<div id="ringkasan-materi" class="section level2 unnumbered hasAnchor">
-<h2>Ringkasan Materi<a href="index.html#ringkasan-materi" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Ekonometrika adalah cabang ilmu ekonomi yang menggunakan metode matematika dan statistik untuk menganalisis dan menguji hipotesis dalam konteks ekonomi. Ini menggabungkan konsep ekonomi dengan alat statistik untuk memahami dan memodelkan hubungan ekonomi.</p>
-<p>Berikut adalah beberapa topik umum dalam ekonometrika:</p>
+<p>As the author, I hope that this book will not only be a valuable reference source for students, academics, and economic practitioners, but will also inspire further interest and understanding of the complexity of economic phenomena. I would like to thank everyone who has contributed and supported me in the process of writing this book.</p>
+<div id="summary" class="section level2 unnumbered hasAnchor">
+<h2>Summary<a href="index.html#summary" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Econometrics is a branch of economics that uses mathematical and statistical methods to analyze and test hypotheses in an economic context. It combines economic concepts with statistical tools to understand and model economic relationships.</p>
+<p>Here are some common topics in econometrics:</p>
 <ul>
-<li><p><strong>Model Regresi:</strong> Ekonometrika seringkali dimulai dengan pembelajaran model regresi, di mana hubungan antara satu atau lebih variabel dependen dan independen dijelaskan. Model regresi dapat sederhana atau kompleks tergantung pada data dan masalah yang dihadapi.</p></li>
-<li><p><strong>Asumsi Regresi:</strong> Analisis regresi memerlukan adanya beberapa asumsi, seperti asumsi homoskedastisitas (varians residual konstan), asumsi independensi residual, dan asumsi normalitas residual.</p></li>
-<li><p><strong>Estimasi Parameter:</strong> Menggunakan data empiris, kita dapat mengestimasi parameter dalam model regresi untuk mengetahui seberapa baik model tersebut cocok dengan data.</p></li>
-<li><p><strong>Uji Hipotesis:</strong> Ekonometrika digunakan untuk menguji hipotesis statistik tentang parameter model. Ini membantu menentukan apakah hubungan yang diamati secara signifikan berbeda dari nol.</p></li>
-<li><p><strong>Multikolinieritas dan Heteroskedastisitas:</strong> Beberapa masalah umum dalam analisis regresi melibatkan multikolinieritas (korelasi tinggi antar variabel independen) dan heteroskedastisitas (varians residual tidak konstan). Ekonometrikian mengembangkan metode untuk menangani masalah-masalah ini.</p></li>
-<li><p><strong>Model Time Series:</strong> Ekonometrika juga sering digunakan untuk menganalisis data deret waktu, yang mencakup observasi yang diambil secara berurutan selama waktu tertentu.</p></li>
-<li><p><strong>Ekonometrika Terapan:</strong> Selain model dasar, ekonometrika juga diterapkan dalam berbagai bidang ekonomi, termasuk keuangan, sumber daya manusia, pemasaran, dan lainnya.</p></li>
+<li><p><strong>Regression Models:</strong> Econometrics often begins with the study of regression models, in which the relationship between one or more dependent and independent variables is explained. Regression models can be simple or complex depending on the data and problem at hand.</p></li>
+<li><p><strong>Regression Assumptions:</strong> Regression analysis requires several assumptions, such as the homoscedasticity assumption (constant residual variance), the residual independence assumption, and the residual normality assumption.</p></li>
+<li><p><strong>Parameter Estimation:</strong> Using empirical data, we can estimate parameters in a regression model to find out how well the model fits the data.</p></li>
+<li><p><strong>Hypothesis Testing:</strong> Econometrics is used to test statistical hypotheses about model parameters. This helps determine whether the observed relationship is significantly different from zero.</p></li>
+<li><p><strong>Multicollinearity and Heteroscedasticity:</strong> Some common problems in regression analysis involve multicollinearity (high correlation between independent variables) and heteroscedasticity (non-constant residual variance). Econometricians develop methods to deal with these problems.</p></li>
+<li><p><strong>Time Series Model:</strong> Econometrics is also often used to analyze time series data, which includes observations taken sequentially over a certain time.</p></li>
+<li><p><strong>Applied Econometrics:</strong> In addition to basic models, econometrics is also applied in various fields of economics, including finance, human resources, marketing, and others.</p></li>
 </ul>
 </div>
-<div id="penulis" class="section level2 unnumbered hasAnchor">
-<h2>Penulis<a href="index.html#penulis" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="writer" class="section level2 unnumbered hasAnchor">
+<h2>Writer<a href="index.html#writer" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p><img src = "https://github.com/dsciencelabs/images/blob/master/Penulis/Bakti.jpg?raw=true" width = "150" height = "150" style = "float:right; margin-left: 10px; margin-top: 7px" /></p>
 <ul>
-<li><strong><a href="https://www.linkedin.com/in/dsciencelabs/">Bakti Siregar, M.Sc</a></strong> adalah Ketua Program Studi di Jurusan Statistika Universitas Matana. Lulusan Magister Matematika Terapan dari National Sun Yat Sen University, Taiwan. Beliau juga merupakan dosen dan konsultan Data Scientist di perusahaan-perusahaan ternama seperti <a href="https://www.jne.co.id/id/beranda">JNE</a>, <a href="https://www.samoragroup.co.id/home/en">Samora Group</a>, <a href="https://www.pertamina.com/">Pertamina</a>, dan lainnya. Beliau memiliki antusiasme khusus dalam mengajar Big Data Analytics, Machine Learning, Optimisasi, dan Analisis Time Series di bidang keuangan dan investasi. Keahliannya juga terlihat dalam penggunaan bahasa pemrograman Statistik seperti R Studio dan Python. Beliau mengaplikasikan sistem basis data MySQL/NoSQL dalam pembelajaran manajemen data, serta mahir dalam menggunakan tools Big Data seperti Spark dan Hadoop. Beberapa project beliau dapat dilihat di link berikut: <a href="https://rpubs.com/dsciencelabs">Rpubs</a>, <a href="https://github.com/dsciencelabs">Github</a>, <a href="https://dsciencelabs.github.io/web/index.html">Website</a>, dan <a href="https://www.kaggle.com/baktisiregar/code">Kaggle</a>.</li>
+<li><strong><a href="https://www.linkedin.com/in/dsciencelabs/">Bakti Siregar, M.Sc</a></strong> is Head of the Study Program at the Department of Statistics, Matana University. Graduate of Masters in Applied Mathematics from National Sun Yat Sen University, Taiwan. He is also a lecturer and Data Scientist consultant at well-known companies such as <a href="https://www.jne.co.id/id/beranda">JNE</a>, <a href="https://www.samoragroup.co.%20id/home/en">Samora Group</a>, <a href="https://www.pertamina.com/">Pertamina</a>, and others. He has special enthusiasm in teaching Big Data Analytics, Machine Learning, Optimization, and Time Series Analysis in the fields of finance and investment. His expertise is also evident in the use of Statistical programming languages such as R Studio and Python. He applies the MySQL/NoSQL database system in learning data management, and is proficient in using Big Data tools such as Spark and Hadoop. Some of his projects can be seen at the following links: <a href="https://rpubs.com/dsciencelabs">Rpubs</a>, <a href="https://github.com/dsciencelabs">Github</a>, <a href="https://dsciencelabs.github%20.io/web/index.html">Website</a>, and <a href="https://www.kaggle.com/baktisiregar/code">Kaggle</a>.</li>
 </ul>
 </div>
-<div id="ucapan-terima-kasih" class="section level2 unnumbered hasAnchor">
-<h2>Ucapan Terima Kasih<a href="index.html#ucapan-terima-kasih" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Terima kasih kepada rekan-rekan akademisi dan praktisi ekonometrika yang telah berbagi pengetahuan dan wawasan, memberikan masukan yang berharga, serta memberikan inspirasi dalam penyusunan materi ini. Saya juga mengucapkan terima kasih kepada keluarga dan teman-teman yang memberikan dukungan moril dan semangat selama proses penulisan. Kalian adalah sumber kekuatan dan inspirasi bagi saya. Seluruh proses penulisan ini adalah perjalanan yang luar biasa, dan saya berharap ebook ini dapat memberikan manfaat bagi pembaca, baik mereka yang sedang mempelajari ekonometrika untuk pertama kalinya maupun mereka yang ingin meningkatkan pemahaman mereka.</p>
-<p>Akhir kata, terima kasih kepada tim penerbit yang telah bekerja keras dalam proses produksi ebook ini. Semoga ebook ini menjadi sumber referensi yang bermanfaat dan dapat turut berkontribusi dalam perkembangan studi ekonometrika.</p>
+<div id="my-gratitude" class="section level2 unnumbered hasAnchor">
+<h2>My Gratitude<a href="index.html#my-gratitude" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Thank you to fellow academics and econometric practitioners who have shared their knowledge and insights, provided valuable input, and provided inspiration in preparing this material. I would also like to thank my family and friends who provided moral support and encouragement during the writing process. You are a source of strength and inspiration for me. The entire process of writing this was an incredible journey, and I hope this ebook will be of benefit to readers, both those who are studying econometrics for the first time and those who want to improve their understanding.</p>
+<p>Finally, thank you to the publishing team who has worked hard in the production process of this ebook. Hopefully this ebook will be a useful reference source and can contribute to the development of econometric studies.</p>
 </div>
-<div id="masukan-saran" class="section level2 unnumbered hasAnchor">
-<h2>Masukan &amp; Saran<a href="index.html#masukan-saran" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Semua masukan dan tanggapan Anda sangat berarti bagi kami untuk memperbaiki template ini kedepannya. Bagi para pembaca/pengguna yang ingin menyampaikan masukan dan tanggapan, dipersilahkan melalui kontak dibawak ini!</p>
+<div id="feedback-suggestions" class="section level2 unnumbered hasAnchor">
+<h2>Feedback &amp; Suggestions<a href="index.html#feedback-suggestions" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>All your input and feedback means a lot to us to improve this template in the future. For readers/users who wish to submit input and responses, please use the contact below!</p>
 <p><strong>Email:</strong> <a href="mailto:dsciencelabs@outlook.com" class="email">dsciencelabs@outlook.com</a></p>
 
 </div>
@@ -167,7 +266,7 @@
         </div>
       </div>
 
-<a href="bab1.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="introduction-to-econometrics.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook/js/app.min.js"></script>
@@ -209,7 +308,7 @@ gitbook.start({
 "link": null,
 "text": null
 },
-"download": ["Ekonometrika.pdf", "Ekonometrika.epub"],
+"download": null,
 "search": {
 "engine": "fuse",
 "options": null
@@ -221,6 +320,20 @@ gitbook.start({
 });
 </script>
 
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
 </body>
 
 </html>
