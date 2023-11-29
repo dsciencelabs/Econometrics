@@ -7,7 +7,7 @@ documentclass: book
 bibliography: [book.bib, packages.bib]
 biblio-style: apalike
 link-citations: yes
-github-repo: dsciencelabs/Ekonometrika
+github-repo: dsciencelabs/Econometrics
 description: "Deskripsi Singkat Tentang Buku"
 tags: [algoritma, pemrograman, r-programming]
 cover-image: images/EBook_Cover.png
