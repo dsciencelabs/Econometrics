@@ -5,7 +5,7 @@ account: dsciencelabs
 server: bookdown.org
 hostUrl: https://bookdown.org/__api__
 appId: 13396
-bundleId: 91227
+bundleId: 91230
 url: https://bookdown.org/dsciencelabs/ekonometrika/
 version: 1
 asMultiple: FALSE
