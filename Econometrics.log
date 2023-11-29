@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.11.29)  29 NOV 2023 15:36
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.11.29)  29 NOV 2023 15:47
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -758,13 +758,13 @@ Package amsmath Warning: Foreign command \over;
 
 ]
 
-! LaTeX Error: File `images/Bab2/correlation' not found.
+! LaTeX Error: File `images/bab2/correlation' not found.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.428 ...dth=1\linewidth]{images/Bab2/correlation}
+l.428 ...dth=1\linewidth]{images/bab2/correlation}
                                                    \end{center} 
 Here is how much of TeX's memory you used:
  17355 strings out of 476929

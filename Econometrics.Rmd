@@ -234,7 +234,7 @@ We can describe the relationship between these two variables graphically and num
 <br>
 
 ```{r correlation, echo=FALSE,fig.align='center', out.width = '100%'}
-knitr::include_graphics("images/Bab2/correlation.webp")
+knitr::include_graphics("images/bab2/correlation.webp")
 ```
 
 <br>
